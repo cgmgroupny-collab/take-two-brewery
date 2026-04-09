@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Take Two Brewery | Craft Beer Taproom in Bay Shore, NY</title>
+  <meta name="description" content="Take Two Brewery — craft brewery and taproom in Bay Shore, NY specializing in dark beers, porters, and stouts. Open Wed–Sun. Steps from Bay Shore LIRR.">
+  <meta name="keywords" content="Take Two Brewery, Bay Shore NY, craft beer, taproom, porter, stout, Long Island brewery">
+  <meta property="og:title" content="Take Two Brewery | Bay Shore, NY">
+  <meta property="og:description" content="Craft brewery specializing in dark beers. One is just not enough.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.taketwobrewery.com">
+  <link rel="canonical" href="https://www.taketwobrewery.com">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Brewery",
+    "name": "Take Two Brewery",
+    "description": "Craft brewery and taproom in Bay Shore, NY specializing in dark beers, porters, and stouts.",
+    "url": "https://www.taketwobrewery.com",
+    "telephone": "+16312056660",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1676 Union Blvd.",
+      "addressLocality": "Bay Shore",
+      "addressRegion": "NY",
+      "postalCode": "11706",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 40.7251,
+      "longitude": -73.2454
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday","Thursday"], "opens": "16:00", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "16:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "12:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "20:00" }
+    ],
+    "servesCuisine": "Craft Beer",
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.instagram.com/taketwobrewery/",
+      "https://www.facebook.com/TakeTwoBrewery/",
+      "https://untappd.com/TakeTwoBrewery"
+    ]
+  }
+  </script>
+
+  <style>
+    /* ═══════════════════════════════════════════════
+       CSS VARIABLES
+    ═══════════════════════════════════════════════ */
+    :root {
+      --bg-deep: #080808;
+      --bg-dark: #0D0D0D;
+      --bg-card: #141414;
+      --bg-card-hover: #1a1a1a;
+      --amber: #D4A024;
+      --amber-light: #E8C05A;
+      --amber-dim: #7A5C15;
+      --red: #B03737;
+      --red-light: #D45050;
+      --teal: #0088CB;
+      --cream: #F5E6C8;
+      --cream-dim: #C4B89A;
+      --text-primary: #E8E0D4;
+      --text-secondary: #9A9083;
+      --text-muted: #5A5347;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-serif: 'Crimson Pro', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    /* ═══════════════════════════════════════════════
+       RESET & BASE
+    ═══════════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scrollbar-color: var(--amber-dim) var(--bg-deep);
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: var(--amber);
+      color: var(--bg-deep);
+    }
+
+    a { color: var(--amber); text-decoration: none; transition: color 0.3s; }
+    a:hover { color: var(--amber-light); }
+
+    img { max-width: 100%; display: block; }
+
+    /* ═══════════════════════════════════════════════
+       GRAIN OVERLAY (film texture)
+    ═══════════════════════════════════════════════ */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    /* ═══════════════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════════════ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.25rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.4s, backdrop-filter 0.4s;
+    }
+
+    .nav.scrolled {
+      background: rgba(8, 8, 8, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(212, 160, 36, 0.08);
+    }
+
+    .nav__logo {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: 0.15em;
+      color: var(--cream);
+      text-transform: uppercase;
+    }
+
+    .nav__logo span { color: var(--amber); }
+
+    .nav__links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav__links a {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .nav__links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--amber);
+      transition: width 0.3s ease;
+    }
+
+    .nav__links a:hover { color: var(--cream); }
+    .nav__links a:hover::after { width: 100%; }
+
+    .nav__cta {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      letter-spacing: 0.2em;
+      padding: 0.6rem 1.6rem;
+      border: 1px solid var(--amber);
+      color: var(--amber) !important;
+      transition: all 0.3s;
+    }
+
+    .nav__cta:hover {
+      background: var(--amber);
+      color: var(--bg-deep) !important;
+    }
+
+    /* Mobile menu toggle */
+    .nav__toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav__toggle span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--cream);
+      transition: 0.3s;
+    }
+
+    /* ═══════════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 80%, rgba(176, 55, 55, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(212, 160, 36, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(0, 136, 203, 0.04) 0%, transparent 60%),
+        linear-gradient(175deg, #0a0a0a 0%, #0d0807 40%, #100a06 70%, #080808 100%);
+    }
+
+    /* Animated golden haze */
+    .hero__bg::before {
+      content: '';
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      width: 800px;
+      height: 800px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(212, 160, 36, 0.06) 0%, transparent 70%);
+      animation: pulse-glow 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulse-glow {
+      0% { opacity: 0.4; transform: translate(-50%, -50%) scale(0.9); }
+      100% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
+    }
+
+    /* Horizontal rule decorations */
+    .hero__rule {
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--amber), transparent);
+      margin: 1.5rem auto;
+      opacity: 0.6;
+    }
+
+    .hero__pre {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--amber);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(4.5rem, 14vw, 12rem);
+      line-height: 0.88;
+      letter-spacing: 0.04em;
+      color: var(--cream);
+      position: relative;
+      z-index: 1;
+      margin-top: 1rem;
+    }
+
+    .hero__title em {
+      font-style: normal;
+      color: var(--amber);
+      display: inline-block;
+      position: relative;
+    }
+
+    .hero__tagline {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-dim);
+      position: relative;
+      z-index: 1;
+      margin-top: 0.5rem;
+    }
+
+    .hero__meta {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      position: relative;
+      z-index: 1;
+      margin-top: 2rem;
+    }
+
+    .hero__meta span { color: var(--amber-dim); margin: 0 0.75rem; }
+
+    .hero__scroll {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      z-index: 1;
+    }
+
+    .hero__scroll span {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .hero__scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, var(--amber), transparent);
+      animation: scroll-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scroll-pulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+      50% { opacity: 1; transform: scaleY(1); }
+    }
+
+    /* ═══════════════════════════════════════════════
+       SECTION BASICS
+    ═══════════════════════════════════════════════ */
+    section {
+      padding: 7rem 3rem;
+      position: relative;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      letter-spacing: 0.04em;
+      color: var(--cream);
+      line-height: 0.95;
+      margin-bottom: 2rem;
+    }
+
+    .section-rule {
+      width: 60px;
+      height: 2px;
+      background: var(--amber);
+      margin-bottom: 2rem;
+    }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ═══════════════════════════════════════════════
+       ABOUT / STORY
+    ═══════════════════════════════════════════════ */
+    .about {
+      background:
+        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 50%, var(--bg-deep) 100%);
+    }
+
+    .about__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about__text p {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .about__text p:first-of-type::first-letter {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      float: left;
+      line-height: 0.8;
+      margin-right: 0.5rem;
+      margin-top: 0.15rem;
+      color: var(--amber);
+    }
+
+    .about__visual {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+    }
+
+    .about__visual-inner {
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(ellipse at 30% 40%, rgba(212, 160, 36, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 70%, rgba(176, 55, 55, 0.1) 0%, transparent 50%),
+        linear-gradient(160deg, #1a1510, #0d0a07);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid rgba(212, 160, 36, 0.1);
+    }
+
+    .about__visual-year {
+      font-family: var(--font-display);
+      font-size: 8rem;
+      color: rgba(212, 160, 36, 0.08);
+      line-height: 1;
+    }
+
+    .about__visual-text {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--amber-dim);
+      margin-top: 1rem;
+    }
+
+    .about__stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(212, 160, 36, 0.1);
+    }
+
+    .about__stat-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--amber);
+    }
+
+    .about__stat-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* ═══════════════════════════════════════════════
+       ON TAP
+    ═══════════════════════════════════════════════ */
+    .ontap {
+      background: var(--bg-deep);
+      overflow: hidden;
+    }
+
+    .ontap__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 4rem;
+    }
+
+    .ontap__note {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .tap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .tap-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.04);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: default;
+    }
+
+    .tap-card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(212, 160, 36, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .tap-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      transition: opacity 0.4s;
+    }
+
+    .tap-card[data-style="stout"]::before { background: #1a1a1a; }
+    .tap-card[data-style="porter"]::before { background: #3d2b1f; }
+    .tap-card[data-style="ipa"]::before { background: #c4882f; }
+    .tap-card[data-style="lager"]::before { background: #e8c95a; }
+    .tap-card[data-style="red"]::before { background: var(--red); }
+    .tap-card[data-style="pale"]::before { background: #d4a54a; }
+    .tap-card[data-style="seasonal"]::before { background: var(--teal); }
+
+    .tap-card__style {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .tap-card__name {
+      font-family: var(--font-display);
+      font-size: 1.65rem;
+      letter-spacing: 0.06em;
+      color: var(--cream);
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+
+    .tap-card__desc {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    .tap-card__meta {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .tap-card__abv, .tap-card__price {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+
+    .tap-card__abv strong, .tap-card__price strong {
+      color: var(--amber);
+      font-weight: 600;
+    }
+
+    .tap-card--featured {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      padding: 2.5rem;
+      border-color: rgba(212, 160, 36, 0.12);
+      background: linear-gradient(135deg, var(--bg-card), rgba(26, 21, 16, 0.8));
+    }
+
+    .tap-card--featured .tap-card__badge {
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--amber);
+      background: rgba(212, 160, 36, 0.1);
+      padding: 0.3rem 0.8rem;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    /* ═══════════════════════════════════════════════
+       TAPROOM
+    ═══════════════════════════════════════════════ */
+    .taproom {
+      background:
+        radial-gradient(ellipse at 80% 40%, rgba(176, 55, 55, 0.06) 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 50%, var(--bg-deep) 100%);
+    }
+
+    .taproom__features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .feature-card {
+      padding: 2.5rem 2rem;
+      border: 1px solid rgba(255,255,255,0.04);
+      background: rgba(20, 20, 20, 0.5);
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card:hover {
+      border-color: rgba(212, 160, 36, 0.12);
+      transform: translateY(-3px);
+    }
+
+    .feature-card__icon {
+      font-size: 2.2rem;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .feature-card__title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      letter-spacing: 0.08em;
+      color: var(--cream);
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-card__text {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    .taproom__quote {
+      margin-top: 5rem;
+      text-align: center;
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(212, 160, 36, 0.08);
+      border-bottom: 1px solid rgba(212, 160, 36, 0.08);
+    }
+
+    .taproom__quote blockquote {
+      font-family: var(--font-serif);
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--cream-dim);
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .taproom__quote cite {
+      display: block;
+      margin-top: 1.5rem;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-style: normal;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber-dim);
+    }
+
+    /* ═══════════════════════════════════════════════
+       VISIT
+    ═══════════════════════════════════════════════ */
+    .visit {
+      background: var(--bg-deep);
+    }
+
+    .visit__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 3rem;
+    }
+
+    .visit__info h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      letter-spacing: 0.12em;
+      color: var(--cream);
+      margin-bottom: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .visit__info h3:first-child { margin-top: 0; }
+
+    .visit__address {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+
+    .visit__address a {
+      color: var(--amber);
+      border-bottom: 1px solid rgba(212, 160, 36, 0.3);
+    }
+
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .hours-table tr {
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .hours-table td {
+      padding: 0.65rem 0;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .hours-table td:first-child {
+      font-weight: 500;
+      color: var(--cream-dim);
+      width: 45%;
+    }
+
+    .hours-table .closed td { color: var(--text-muted); }
+
+    .visit__map {
+      aspect-ratio: 1;
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.04);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .visit__map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: grayscale(0.8) brightness(0.6) contrast(1.2);
+      transition: filter 0.5s;
+    }
+
+    .visit__map:hover iframe {
+      filter: grayscale(0.4) brightness(0.7) contrast(1.1);
+    }
+
+    /* ═══════════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════════ */
+    footer {
+      background: var(--bg-deep);
+      border-top: 1px solid rgba(212, 160, 36, 0.06);
+      padding: 4rem 3rem;
+    }
+
+    .footer__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer__brand {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      letter-spacing: 0.15em;
+      color: var(--cream);
+    }
+
+    .footer__brand span { color: var(--amber); }
+
+    .footer__legal {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    .footer__social {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer__social a {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color 0.3s;
+    }
+
+    .footer__social a:hover { color: var(--amber); }
+
+    /* ═══════════════════════════════════════════════
+       AGE GATE OVERLAY
+    ═══════════════════════════════════════════════ */
+    .age-gate {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: rgba(8, 8, 8, 0.97);
+      backdrop-filter: blur(30px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      transition: opacity 0.6s, visibility 0.6s;
+    }
+
+    .age-gate.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .age-gate__title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      letter-spacing: 0.06em;
+      color: var(--cream);
+    }
+
+    .age-gate__title span { color: var(--amber); }
+
+    .age-gate__text {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin: 1.5rem 0 2.5rem;
+    }
+
+    .age-gate__btns {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .age-gate__btn {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      letter-spacing: 0.2em;
+      padding: 0.8rem 2.5rem;
+      border: 1px solid var(--amber);
+      background: none;
+      color: var(--amber);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .age-gate__btn--yes:hover {
+      background: var(--amber);
+      color: var(--bg-deep);
+    }
+
+    .age-gate__btn--no {
+      border-color: var(--text-muted);
+      color: var(--text-muted);
+    }
+
+    .age-gate__btn--no:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    /* ═══════════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      section { padding: 5rem 1.5rem; }
+
+      .nav { padding: 1rem 1.5rem; }
+      .nav__links { display: none; }
+      .nav__toggle { display: flex; }
+
+      .about__grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about__visual { max-height: 350px; }
+
+      .tap-card--featured {
+        grid-column: span 1;
+        grid-template-columns: 1fr;
+      }
+
+      .taproom__features { grid-template-columns: 1fr; }
+
+      .visit__grid { grid-template-columns: 1fr; gap: 2rem; }
+
+      .footer__inner { flex-direction: column; gap: 2rem; text-align: center; }
+
+      .about__stats { flex-wrap: wrap; gap: 2rem; }
+
+      .ontap__header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    }
+
+    @media (max-width: 600px) {
+      .tap-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- AGE GATE -->
+  <div class="age-gate" id="ageGate">
+    <div class="age-gate__title">TAKE <span>TWO</span></div>
+    <div class="hero__rule"></div>
+    <p class="age-gate__text">Are you 21 years of age or older?</p>
+    <div class="age-gate__btns">
+      <button class="age-gate__btn age-gate__btn--yes" onclick="enterSite()">YES, ENTER</button>
+      <button class="age-gate__btn age-gate__btn--no" onclick="window.location='https://google.com'">NO</button>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">TAKE <span>TWO</span></div>
+    <ul class="nav__links">
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#ontap">On Tap</a></li>
+      <li><a href="#taproom">Taproom</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <a href="#visit" class="nav__cta">VISIT US</a>
+    <div class="nav__toggle" onclick="this.classList.toggle('active')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero__bg"></div>
+    <span class="hero__pre reveal">Bay Shore, New York &mdash; Craft Brewery &amp; Taproom</span>
+    <div class="hero__rule reveal"></div>
+    <h1 class="hero__title reveal">TAKE <em>TWO</em></h1>
+    <p class="hero__tagline reveal">One is just not enough.</p>
+    <p class="hero__meta reveal">
+      Dark Beer Specialists <span>&bull;</span> Est. 2023 <span>&bull;</span> Farm Brewery
+    </p>
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </header>
+
+  <!-- ABOUT / STORY -->
+  <section class="about" id="story">
+    <div class="section-inner">
+      <div class="about__grid">
+        <div class="about__text">
+          <div class="section-label reveal">Our Story</div>
+          <h2 class="section-title reveal">TWICE THE<br>FLAVOR</h2>
+          <div class="section-rule reveal"></div>
+          <p class="reveal">Thanksgiving 2013. Two brothers-in-law, a kitchen, and a homebrew kit that changed everything. Brendan Byrne and David Cristelot discovered a shared obsession that night&mdash;the deep, roasted complexity of dark beers. Porters. Stouts. The kind of craft that rewards patience and punishes shortcuts.</p>
+          <p class="reveal">Ten years of relentless refinement followed. Living rooms converted to makeshift brewhouses. Competitions entered and won. Recipes that started as curiosity became something worth building a life around. David stepped away from finance. Brendan from IT. Both took a second chance on something that actually mattered.</p>
+          <p class="reveal">In September 2023, Take Two opened its doors on Union Boulevard&mdash;steps from the Bay Shore LIRR station. The name carries a double meaning: a second career for its founders, and the conviction that one great beer is just never enough.</p>
+          <div class="about__stats reveal">
+            <div>
+              <div class="about__stat-num">10</div>
+              <div class="about__stat-label">Years Brewing</div>
+            </div>
+            <div>
+              <div class="about__stat-num">10</div>
+              <div class="about__stat-label">Taps Flowing</div>
+            </div>
+            <div>
+              <div class="about__stat-num">2</div>
+              <div class="about__stat-label">Founders</div>
+            </div>
+          </div>
+        </div>
+        <div class="about__visual reveal">
+          <div class="about__visual-inner">
+            <div class="about__visual-year">2023</div>
+            <div class="about__visual-text">Bay Shore, NY</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ON TAP -->
+  <section class="ontap" id="ontap">
+    <div class="section-inner">
+      <div class="ontap__header">
+        <div>
+          <div class="section-label reveal">What's Pouring</div>
+          <h2 class="section-title reveal">ON TAP</h2>
+          <div class="section-rule reveal"></div>
+        </div>
+        <div class="ontap__note reveal">Flights $10 &bull; Pints $8 &bull; Crowlers available</div>
+      </div>
+
+      <div class="tap-grid">
+        <!-- Featured Beer -->
+        <div class="tap-card tap-card--featured reveal" data-style="stout">
+          <div>
+            <div class="tap-card__badge">Award Winner</div>
+            <div class="tap-card__style">Oatmeal Milk Stout</div>
+            <div class="tap-card__name">BIG D'S OATMEAL MILK STOUT</div>
+            <div class="tap-card__desc">First place homebrew competition winner turned flagship commercial brew. Silky, smooth, with a rich oat backbone and sweet lactose finish that makes every sip dangerously easy.</div>
+            <div class="tap-card__meta">
+              <div class="tap-card__abv">ABV <strong>5.8%</strong></div>
+              <div class="tap-card__price">Pint <strong>$8</strong></div>
+            </div>
+          </div>
+          <div>
+            <div class="tap-card__style">Mocha Porter</div>
+            <div class="tap-card__name">DARK SUNRISE</div>
+            <div class="tap-card__desc">Coffee-infused porter with Madagascar vanilla. Like a morning latte that decided to skip work and hang out at the brewery instead. Rich, complex, dangerously drinkable.</div>
+            <div class="tap-card__meta">
+              <div class="tap-card__abv">ABV <strong>6.2%</strong></div>
+              <div class="tap-card__price">Pint <strong>$8</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tap-card reveal" data-style="porter">
+          <div class="tap-card__style">Baltic Porter</div>
+          <div class="tap-card__name">EB BALTIC PORTER</div>
+          <div class="tap-card__desc">Bold and layered with dark fruit, toffee, and a long clean finish. Old-world style, new-world craft.</div>
+          <div class="tap-card__meta">
+            <div class="tap-card__abv">ABV <strong>7.4%</strong></div>
+            <div class="tap-card__price">Pint <strong>$8</strong></div>
+          </div>
+        </div>
+
+        <div class="tap-card reveal" data-style="seasonal">
+          <div class="tap-card__style">Seasonal Stout</div>
+          <div class="tap-card__name">PEPPERMINT MILK STOUT</div>
+          <div class="tap-card__desc">Chocolate stout base layered with cool peppermint. Holiday comfort in a glass, available while it lasts.</div>
+          <div class="tap-card__meta">
+            <div class="tap-card__abv">ABV <strong>5.5%</strong></div>
+            <div class="tap-card__price">Pint <strong>$8</strong></div>
+          </div>
+        </div>
+
+        <div class="tap-card reveal" data-style="ipa">
+          <div class="tap-card__style">India Pale Ale</div>
+          <div class="tap-card__name">UNION BLVD IPA</div>
+          <div class="tap-card__desc">Hazy, juicy, tropical. Citra and Mosaic hops punch through a pillowy malt body. Named for the street we call home.</div>
+          <div class="tap-card__meta">
+            <div class="tap-card__abv">ABV <strong>6.8%</strong></div>
+            <div class="tap-card__price">Pint <strong>$8</strong></div>
+          </div>
+        </div>
+
+        <div class="tap-card reveal" data-style="red">
+          <div class="tap-card__style">Irish Red Ale</div>
+          <div class="tap-card__name">BYRNE'S IRISH RED</div>
+          <div class="tap-card__desc">Toasty caramel malt, a whisper of toffee, and a dry, biscuity finish. A heritage pour from co-founder Brendan's roots.</div>
+          <div class="tap-card__meta">
+            <div class="tap-card__abv">ABV <strong>5.0%</strong></div>
+            <div class="tap-card__price">Pint <strong>$8</strong></div>
+          </div>
+        </div>
+
+        <div class="tap-card reveal" data-style="lager">
+          <div class="tap-card__style">Craft Lager</div>
+          <div class="tap-card__name">SHORE THING LAGER</div>
+          <div class="tap-card__desc">Crisp, clean, crushable. Noble hops and pilsner malt in perfect harmony. The gateway pour for your light-beer friends.</div>
+          <div class="tap-card__meta">
+            <div class="tap-card__abv">ABV <strong>4.6%</strong></div>
+            <div class="tap-card__price">Pint <strong>$8</strong></div>
+          </div>
+        </div>
+
+        <div class="tap-card reveal" data-style="pale">
+          <div class="tap-card__style">Pale Ale</div>
+          <div class="tap-card__name">SECOND CHANCE PALE</div>
+          <div class="tap-card__desc">Balanced and bright with citrus zest and a toasted-biscuit backbone. The beer that bridges dark and light drinkers.</div>
+          <div class="tap-card__meta">
+            <div class="tap-card__abv">ABV <strong>5.2%</strong></div>
+            <div class="tap-card__price">Pint <strong>$8</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAPROOM -->
+  <section class="taproom" id="taproom">
+    <div class="section-inner">
+      <div class="section-label reveal">The Space</div>
+      <h2 class="section-title reveal">THE TAPROOM</h2>
+      <div class="section-rule reveal"></div>
+      <p class="reveal" style="font-family: var(--font-serif); font-size: 1.15rem; line-height: 1.8; color: var(--text-secondary); max-width: 650px;">
+        A 2,800-square-foot taproom with a fireplace, board games, darts, and the kind of ambient warmth
+        that makes three hours feel like thirty minutes. Plus a 3,000-square-foot outdoor patio for when Long Island
+        weather decides to cooperate.
+      </p>
+
+      <div class="taproom__features">
+        <div class="feature-card reveal">
+          <span class="feature-card__icon" aria-hidden="true">&#127866;</span>
+          <div class="feature-card__title">10 ROTATING TAPS</div>
+          <p class="feature-card__text">Always something new, always three dark options. Flights of four for $10 let you explore the full range.</p>
+        </div>
+        <div class="feature-card reveal">
+          <span class="feature-card__icon" aria-hidden="true">&#127829;</span>
+          <div class="feature-card__title">FOOD TRUCKS</div>
+          <p class="feature-card__text">Rotating local food trucks serving pizza, finger food, and whatever pairs best with a stout on a Friday night.</p>
+        </div>
+        <div class="feature-card reveal">
+          <span class="feature-card__icon" aria-hidden="true">&#127926;</span>
+          <div class="feature-card__title">LIVE MUSIC & EVENTS</div>
+          <p class="feature-card__text">Local acts, trivia nights, private parties on the patio. Check our socials for what's coming next.</p>
+        </div>
+      </div>
+
+      <div class="taproom__quote reveal">
+        <blockquote>
+          &ldquo;We spent ten years making beer in our living rooms. Turns out the only thing missing was a room full of people to drink it with.&rdquo;
+        </blockquote>
+        <cite>Brendan Byrne &amp; David Cristelot, Co-Founders</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="visit" id="visit">
+    <div class="section-inner">
+      <div class="section-label reveal">Find Us</div>
+      <h2 class="section-title reveal">VISIT THE<br>BREWERY</h2>
+      <div class="section-rule reveal"></div>
+
+      <div class="visit__grid">
+        <div class="visit__info reveal">
+          <h3>LOCATION</h3>
+          <div class="visit__address">
+            1676 Union Blvd.<br>
+            Bay Shore, NY 11706<br><br>
+            Steps from the Bay Shore LIRR Station<br><br>
+            <a href="tel:+16312056660">(631) 205-6660</a>
+          </div>
+
+          <h3>HOURS</h3>
+          <table class="hours-table">
+            <tr class="closed"><td>Monday</td><td>Closed</td></tr>
+            <tr class="closed"><td>Tuesday</td><td>Closed</td></tr>
+            <tr><td>Wednesday</td><td>4:00 PM &ndash; 10:00 PM</td></tr>
+            <tr><td>Thursday</td><td>4:00 PM &ndash; 10:00 PM</td></tr>
+            <tr><td>Friday</td><td>4:00 PM &ndash; 11:00 PM</td></tr>
+            <tr><td>Saturday</td><td>12:00 PM &ndash; 11:00 PM</td></tr>
+            <tr><td>Sunday</td><td>12:00 PM &ndash; 8:00 PM</td></tr>
+          </table>
+
+          <h3>CONNECT</h3>
+          <div class="visit__address">
+            <a href="https://www.instagram.com/taketwobrewery/" target="_blank" rel="noopener">Instagram</a> &nbsp;&bull;&nbsp;
+            <a href="https://www.facebook.com/TakeTwoBrewery/" target="_blank" rel="noopener">Facebook</a> &nbsp;&bull;&nbsp;
+            <a href="https://untappd.com/TakeTwoBrewery" target="_blank" rel="noopener">Untappd</a>
+          </div>
+        </div>
+
+        <div class="visit__map reveal">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.5!2d-73.2454!3d40.7251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e82940a2c98b1d%3A0x3a46ca99d0c9f1a7!2s1676%20Union%20Blvd%2C%20Bay%20Shore%2C%20NY%2011706!5e0!3m2!1sen!2sus!4v1"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Take Two Brewery Location Map"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand">TAKE <span>TWO</span> BREWERY</div>
+        <div class="footer__legal">&copy; 2024 Take Two Brewery LLC. All rights reserved. Please drink responsibly.</div>
+      </div>
+      <div class="footer__social">
+        <a href="https://www.instagram.com/taketwobrewery/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/TakeTwoBrewery/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://untappd.com/TakeTwoBrewery" target="_blank" rel="noopener">Untappd</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Age gate
+    function enterSite() {
+      document.getElementById('ageGate').classList.add('hidden');
+      sessionStorage.setItem('ageVerified', '1');
+    }
+    if (sessionStorage.getItem('ageVerified')) {
+      document.getElementById('ageGate').classList.add('hidden');
+    }
+
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          // Stagger siblings
+          const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+          const idx = [...siblings].indexOf(entry.target);
+          entry.target.style.transitionDelay = `${idx * 0.08}s`;
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Smooth anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>

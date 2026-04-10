@@ -5,40 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Take Two Brewery | Craft Beer Taproom in Bay Shore, NY</title>
   <meta name="description" content="Take Two Brewery — craft brewery and taproom in Bay Shore, NY specializing in dark beers, porters, and stouts. Open Wed–Sun. Steps from Bay Shore LIRR.">
-  <meta name="keywords" content="Take Two Brewery, Bay Shore NY, craft beer, taproom, porter, stout, Long Island brewery">
+  <meta name="keywords" content="Take Two Brewery, Bay Shore NY, craft beer, taproom, porter, stout, Long Island brewery, book event">
   <meta property="og:title" content="Take Two Brewery | Bay Shore, NY">
   <meta property="og:description" content="Craft brewery specializing in dark beers. One is just not enough.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.taketwobrewery.com">
   <link rel="canonical" href="https://www.taketwobrewery.com">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
-  {
+  [{
     "@context": "https://schema.org",
     "@type": "Brewery",
     "name": "Take Two Brewery",
     "description": "Craft brewery and taproom in Bay Shore, NY specializing in dark beers, porters, and stouts.",
     "url": "https://www.taketwobrewery.com",
     "telephone": "+16312056660",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "1676 Union Blvd.",
-      "addressLocality": "Bay Shore",
-      "addressRegion": "NY",
-      "postalCode": "11706",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 40.7251,
-      "longitude": -73.2454
-    },
+    "email": "taketwobrewery@gmail.com",
+    "address": { "@type": "PostalAddress", "streetAddress": "1676 Union Blvd.", "addressLocality": "Bay Shore", "addressRegion": "NY", "postalCode": "11706", "addressCountry": "US" },
+    "geo": { "@type": "GeoCoordinates", "latitude": 40.7251, "longitude": -73.2454 },
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday","Thursday"], "opens": "16:00", "closes": "22:00" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "16:00", "closes": "23:00" },
@@ -47,18 +35,23 @@
     ],
     "servesCuisine": "Craft Beer",
     "priceRange": "$$",
-    "sameAs": [
-      "https://www.instagram.com/taketwobrewery/",
-      "https://www.facebook.com/TakeTwoBrewery/",
-      "https://untappd.com/TakeTwoBrewery"
-    ]
-  }
+    "sameAs": ["https://www.instagram.com/taketwobrewery/","https://www.facebook.com/TakeTwoBrewery/","https://untappd.com/TakeTwoBrewery"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "St. Baldrick's Head-Shaving Fundraiser at Take Two Brewery",
+    "startDate": "2026-03-21T17:00",
+    "endDate": "2026-03-21T21:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": { "@type": "Place", "name": "Take Two Brewery", "address": { "@type": "PostalAddress", "streetAddress": "1676 Union Blvd.", "addressLocality": "Bay Shore", "addressRegion": "NY", "postalCode": "11706" } },
+    "description": "Annual head-shaving charity fundraiser supporting childhood cancer research through the St. Baldrick's Foundation.",
+    "organizer": { "@type": "Organization", "name": "St. Baldrick's Foundation", "url": "https://www.stbaldricks.org" }
+  }]
   </script>
 
   <style>
-    /* ═══════════════════════════════════════════════
-       CSS VARIABLES
-    ═══════════════════════════════════════════════ */
     :root {
       --bg-deep: #080808;
       --bg-dark: #0D0D0D;
@@ -70,6 +63,7 @@
       --red: #B03737;
       --red-light: #D45050;
       --teal: #0088CB;
+      --green: #2E9E5A;
       --cream: #F5E6C8;
       --cream-dim: #C4B89A;
       --text-primary: #E8E0D4;
@@ -80,474 +74,91 @@
       --font-body: 'DM Sans', sans-serif;
     }
 
-    /* ═══════════════════════════════════════════════
-       RESET & BASE
-    ═══════════════════════════════════════════════ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html {
-      scroll-behavior: smooth;
-      scrollbar-color: var(--amber-dim) var(--bg-deep);
-    }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--bg-deep);
-      color: var(--text-primary);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    ::selection {
-      background: var(--amber);
-      color: var(--bg-deep);
-    }
-
+    html { scroll-behavior: smooth; scrollbar-color: var(--amber-dim) var(--bg-deep); }
+    body { font-family: var(--font-body); background: var(--bg-deep); color: var(--text-primary); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--amber); color: var(--bg-deep); }
     a { color: var(--amber); text-decoration: none; transition: color 0.3s; }
     a:hover { color: var(--amber-light); }
-
     img { max-width: 100%; display: block; }
 
-    /* ═══════════════════════════════════════════════
-       GRAIN OVERLAY (film texture)
-    ═══════════════════════════════════════════════ */
     body::after {
       content: '';
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      pointer-events: none;
-      opacity: 0.035;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
-    /* ═══════════════════════════════════════════════
-       NAVIGATION
-    ═══════════════════════════════════════════════ */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      padding: 1.25rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background 0.4s, backdrop-filter 0.4s;
-    }
-
-    .nav.scrolled {
-      background: rgba(8, 8, 8, 0.92);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(212, 160, 36, 0.08);
-    }
-
-    .nav__logo {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      letter-spacing: 0.15em;
-      color: var(--cream);
-      text-transform: uppercase;
-    }
-
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.25rem 3rem; display: flex; justify-content: space-between; align-items: center; transition: background 0.4s, backdrop-filter 0.4s; }
+    .nav.scrolled { background: rgba(8,8,8,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(212,160,36,0.08); }
+    .nav__logo { font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.15em; color: var(--cream); text-transform: uppercase; }
     .nav__logo span { color: var(--amber); }
-
-    .nav__links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav__links a {
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      position: relative;
-      padding-bottom: 2px;
-    }
-
-    .nav__links a::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--amber);
-      transition: width 0.3s ease;
-    }
-
+    .nav__links { display: flex; gap: 2rem; list-style: none; }
+    .nav__links a { font-family: var(--font-body); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-secondary); position: relative; padding-bottom: 2px; }
+    .nav__links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: var(--amber); transition: width 0.3s ease; }
     .nav__links a:hover { color: var(--cream); }
     .nav__links a:hover::after { width: 100%; }
+    .nav__cta { font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.2em; padding: 0.6rem 1.6rem; border: 1px solid var(--amber); color: var(--amber) !important; transition: all 0.3s; }
+    .nav__cta:hover { background: var(--amber); color: var(--bg-deep) !important; }
+    .nav__toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .nav__toggle span { display: block; width: 26px; height: 2px; background: var(--cream); transition: 0.3s; }
 
-    .nav__cta {
-      font-family: var(--font-display);
-      font-size: 0.95rem;
-      letter-spacing: 0.2em;
-      padding: 0.6rem 1.6rem;
-      border: 1px solid var(--amber);
-      color: var(--amber) !important;
-      transition: all 0.3s;
-    }
-
-    .nav__cta:hover {
-      background: var(--amber);
-      color: var(--bg-deep) !important;
-    }
-
-    /* Mobile menu toggle */
-    .nav__toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .nav__toggle span {
-      display: block;
-      width: 26px;
-      height: 2px;
-      background: var(--cream);
-      transition: 0.3s;
-    }
-
-    /* ═══════════════════════════════════════════════
-       HERO
-    ═══════════════════════════════════════════════ */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
-      overflow: hidden;
-    }
-
-    .hero__bg {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse at 20% 80%, rgba(176, 55, 55, 0.12) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(212, 160, 36, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 50%, rgba(0, 136, 203, 0.04) 0%, transparent 60%),
-        linear-gradient(175deg, #0a0a0a 0%, #0d0807 40%, #100a06 70%, #080808 100%);
-    }
-
-    /* Animated golden haze */
-    .hero__bg::before {
-      content: '';
-      position: absolute;
-      top: 30%;
-      left: 50%;
-      width: 800px;
-      height: 800px;
-      transform: translate(-50%, -50%);
-      background: radial-gradient(circle, rgba(212, 160, 36, 0.06) 0%, transparent 70%);
-      animation: pulse-glow 8s ease-in-out infinite alternate;
-    }
-
-    @keyframes pulse-glow {
-      0% { opacity: 0.4; transform: translate(-50%, -50%) scale(0.9); }
-      100% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
-    }
-
-    /* Horizontal rule decorations */
-    .hero__rule {
-      width: 120px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--amber), transparent);
-      margin: 1.5rem auto;
-      opacity: 0.6;
-    }
-
-    .hero__pre {
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--amber);
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero__title {
-      font-family: var(--font-display);
-      font-size: clamp(4.5rem, 14vw, 12rem);
-      line-height: 0.88;
-      letter-spacing: 0.04em;
-      color: var(--cream);
-      position: relative;
-      z-index: 1;
-      margin-top: 1rem;
-    }
-
-    .hero__title em {
-      font-style: normal;
-      color: var(--amber);
-      display: inline-block;
-      position: relative;
-    }
-
-    .hero__tagline {
-      font-family: var(--font-serif);
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--cream-dim);
-      position: relative;
-      z-index: 1;
-      margin-top: 0.5rem;
-    }
-
-    .hero__meta {
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      position: relative;
-      z-index: 1;
-      margin-top: 2rem;
-    }
-
+    /* HERO */
+    .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem; overflow: hidden; }
+    .hero__bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 80%, rgba(176,55,55,0.12) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(212,160,36,0.08) 0%, transparent 50%), radial-gradient(ellipse at 50% 50%, rgba(0,136,203,0.04) 0%, transparent 60%), linear-gradient(175deg, #0a0a0a 0%, #0d0807 40%, #100a06 70%, #080808 100%); }
+    .hero__bg::before { content: ''; position: absolute; top: 30%; left: 50%; width: 800px; height: 800px; transform: translate(-50%,-50%); background: radial-gradient(circle, rgba(212,160,36,0.06) 0%, transparent 70%); animation: pulse-glow 8s ease-in-out infinite alternate; }
+    @keyframes pulse-glow { 0% { opacity: 0.4; transform: translate(-50%,-50%) scale(0.9); } 100% { opacity: 1; transform: translate(-50%,-50%) scale(1.15); } }
+    .hero__rule { width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(--amber), transparent); margin: 1.5rem auto; opacity: 0.6; }
+    .hero__pre { font-family: var(--font-body); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; color: var(--amber); position: relative; z-index: 1; }
+    .hero__title { font-family: var(--font-display); font-size: clamp(4.5rem,14vw,12rem); line-height: 0.88; letter-spacing: 0.04em; color: var(--cream); position: relative; z-index: 1; margin-top: 1rem; }
+    .hero__title em { font-style: normal; color: var(--amber); }
+    .hero__tagline { font-family: var(--font-serif); font-size: clamp(1.1rem,2.5vw,1.5rem); font-weight: 300; font-style: italic; color: var(--cream-dim); position: relative; z-index: 1; margin-top: 0.5rem; }
+    .hero__meta { font-family: var(--font-body); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); position: relative; z-index: 1; margin-top: 2rem; }
     .hero__meta span { color: var(--amber-dim); margin: 0 0.75rem; }
+    .hero__scroll { position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; z-index: 1; }
+    .hero__scroll span { font-family: var(--font-body); font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-muted); }
+    .hero__scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--amber), transparent); animation: scroll-pulse 2s ease-in-out infinite; }
+    @keyframes scroll-pulse { 0%, 100% { opacity: 0.3; transform: scaleY(0.6); } 50% { opacity: 1; transform: scaleY(1); } }
 
-    .hero__scroll {
-      position: absolute;
-      bottom: 3rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      z-index: 1;
-    }
+    /* SECTIONS */
+    section { padding: 7rem 3rem; position: relative; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label { font-family: var(--font-body); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--amber); margin-bottom: 1.5rem; }
+    .section-title { font-family: var(--font-display); font-size: clamp(2.8rem,6vw,5rem); letter-spacing: 0.04em; color: var(--cream); line-height: 0.95; margin-bottom: 2rem; }
+    .section-rule { width: 60px; height: 2px; background: var(--amber); margin-bottom: 2rem; }
 
-    .hero__scroll span {
-      font-family: var(--font-body);
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    .hero__scroll-line {
-      width: 1px;
-      height: 50px;
-      background: linear-gradient(to bottom, var(--amber), transparent);
-      animation: scroll-pulse 2s ease-in-out infinite;
-    }
+    /* ABOUT */
+    .about { background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 50%, var(--bg-deep) 100%); }
+    .about__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .about__text p { font-family: var(--font-serif); font-size: 1.15rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 1.5rem; }
+    .about__text p:first-of-type::first-letter { font-family: var(--font-display); font-size: 3.5rem; float: left; line-height: 0.8; margin-right: 0.5rem; margin-top: 0.15rem; color: var(--amber); }
+    .about__visual { position: relative; aspect-ratio: 3/4; overflow: hidden; }
+    .about__visual-inner { width: 100%; height: 100%; background: radial-gradient(ellipse at 30% 40%, rgba(212,160,36,0.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 70%, rgba(176,55,55,0.1) 0%, transparent 50%), linear-gradient(160deg, #1a1510, #0d0a07); display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid rgba(212,160,36,0.1); }
+    .about__visual-year { font-family: var(--font-display); font-size: 8rem; color: rgba(212,160,36,0.08); line-height: 1; }
+    .about__visual-text { font-family: var(--font-serif); font-size: 1.2rem; font-style: italic; color: var(--amber-dim); margin-top: 1rem; }
+    .about__stats { display: flex; gap: 3rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(212,160,36,0.1); }
+    .about__stat-num { font-family: var(--font-display); font-size: 2.5rem; color: var(--amber); }
+    .about__stat-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.25rem; }
 
-    @keyframes scroll-pulse {
-      0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
-      50% { opacity: 1; transform: scaleY(1); }
-    }
+    /* BEERS */
+    .beers { background: var(--bg-deep); overflow: hidden; }
+    .beers__header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+    .beers__note { font-family: var(--font-serif); font-style: italic; color: var(--text-muted); font-size: 0.95rem; }
+    .beers__tabs { display: flex; gap: 0; margin-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .beers__tab { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.15em; padding: 0.8rem 1.8rem; background: none; border: none; color: var(--text-muted); cursor: pointer; position: relative; transition: color 0.3s; }
+    .beers__tab::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 2px; background: var(--amber); transform: scaleX(0); transition: transform 0.3s; }
+    .beers__tab.active { color: var(--amber); }
+    .beers__tab.active::after { transform: scaleX(1); }
+    .beers__tab:hover { color: var(--cream); }
+    .beer-list { display: none; }
+    .beer-list.active { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
 
-    /* ═══════════════════════════════════════════════
-       SECTION BASICS
-    ═══════════════════════════════════════════════ */
-    section {
-      padding: 7rem 3rem;
-      position: relative;
-    }
-
-    .section-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-family: var(--font-body);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 1.5rem;
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      letter-spacing: 0.04em;
-      color: var(--cream);
-      line-height: 0.95;
-      margin-bottom: 2rem;
-    }
-
-    .section-rule {
-      width: 60px;
-      height: 2px;
-      background: var(--amber);
-      margin-bottom: 2rem;
-    }
-
-    /* Reveal animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ═══════════════════════════════════════════════
-       ABOUT / STORY
-    ═══════════════════════════════════════════════ */
-    .about {
-      background:
-        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 50%, var(--bg-deep) 100%);
-    }
-
-    .about__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .about__text p {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      line-height: 1.85;
-      color: var(--text-secondary);
-      margin-bottom: 1.5rem;
-    }
-
-    .about__text p:first-of-type::first-letter {
-      font-family: var(--font-display);
-      font-size: 3.5rem;
-      float: left;
-      line-height: 0.8;
-      margin-right: 0.5rem;
-      margin-top: 0.15rem;
-      color: var(--amber);
-    }
-
-    .about__visual {
-      position: relative;
-      aspect-ratio: 3/4;
-      overflow: hidden;
-    }
-
-    .about__visual-inner {
-      width: 100%;
-      height: 100%;
-      background:
-        radial-gradient(ellipse at 30% 40%, rgba(212, 160, 36, 0.15) 0%, transparent 60%),
-        radial-gradient(ellipse at 70% 70%, rgba(176, 55, 55, 0.1) 0%, transparent 50%),
-        linear-gradient(160deg, #1a1510, #0d0a07);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid rgba(212, 160, 36, 0.1);
-    }
-
-    .about__visual-year {
-      font-family: var(--font-display);
-      font-size: 8rem;
-      color: rgba(212, 160, 36, 0.08);
-      line-height: 1;
-    }
-
-    .about__visual-text {
-      font-family: var(--font-serif);
-      font-size: 1.2rem;
-      font-style: italic;
-      color: var(--amber-dim);
-      margin-top: 1rem;
-    }
-
-    .about__stats {
-      display: flex;
-      gap: 3rem;
-      margin-top: 2.5rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(212, 160, 36, 0.1);
-    }
-
-    .about__stat-num {
-      font-family: var(--font-display);
-      font-size: 2.5rem;
-      color: var(--amber);
-    }
-
-    .about__stat-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-top: 0.25rem;
-    }
-
-    /* ═══════════════════════════════════════════════
-       ON TAP
-    ═══════════════════════════════════════════════ */
-    .ontap {
-      background: var(--bg-deep);
-      overflow: hidden;
-    }
-
-    .ontap__header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 4rem;
-    }
-
-    .ontap__note {
-      font-family: var(--font-serif);
-      font-style: italic;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    .tap-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .tap-card {
-      background: var(--bg-card);
-      border: 1px solid rgba(255,255,255,0.04);
-      padding: 2rem;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      cursor: default;
-    }
-
-    .tap-card:hover {
-      background: var(--bg-card-hover);
-      border-color: rgba(212, 160, 36, 0.15);
-      transform: translateY(-4px);
-    }
-
-    .tap-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 3px;
-      height: 100%;
-      transition: opacity 0.4s;
-    }
-
+    .tap-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.04); padding: 2rem; position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); cursor: default; }
+    .tap-card:hover { background: var(--bg-card-hover); border-color: rgba(212,160,36,0.15); transform: translateY(-4px); }
+    .tap-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; }
     .tap-card[data-style="stout"]::before { background: #1a1a1a; }
     .tap-card[data-style="porter"]::before { background: #3d2b1f; }
     .tap-card[data-style="ipa"]::before { background: #c4882f; }
@@ -555,390 +166,146 @@
     .tap-card[data-style="red"]::before { background: var(--red); }
     .tap-card[data-style="pale"]::before { background: #d4a54a; }
     .tap-card[data-style="seasonal"]::before { background: var(--teal); }
+    .tap-card[data-style="sour"]::before { background: #e06090; }
+    .tap-card[data-style="wheat"]::before { background: #dab96f; }
+    .tap-card[data-style="bock"]::before { background: #8b5e3c; }
+    .tap-card[data-style="wit"]::before { background: #f0d878; }
+    .tap-card[data-style="saison"]::before { background: #c89040; }
+    .tap-card[data-style="milkshake"]::before { background: #e8a0d0; }
+    .tap-card[data-style="pumpkin"]::before { background: #d47830; }
+    .tap-card__style { font-family: var(--font-body); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.75rem; }
+    .tap-card__name { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.06em; color: var(--cream); line-height: 1.1; margin-bottom: 0.75rem; }
+    .tap-card__desc { font-family: var(--font-serif); font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary); }
+    .tap-card__meta { display: flex; gap: 1.5rem; margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.05); }
+    .tap-card__abv { font-family: var(--font-body); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--text-muted); }
+    .tap-card__abv strong { color: var(--amber); font-weight: 600; }
+    .tap-card__badge { font-family: var(--font-body); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--amber); background: rgba(212,160,36,0.1); padding: 0.3rem 0.8rem; display: inline-block; margin-bottom: 0.75rem; }
+    .tap-card--off { opacity: 0.65; }
+    .tap-card--off:hover { opacity: 1; }
 
-    .tap-card__style {
-      font-family: var(--font-body);
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.75rem;
+    /* TAPROOM */
+    .taproom { background: radial-gradient(ellipse at 80% 40%, rgba(176,55,55,0.06) 0%, transparent 50%), linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 50%, var(--bg-deep) 100%); }
+    .taproom__features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+    .feature-card { padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.04); background: rgba(20,20,20,0.5); transition: all 0.4s; position: relative; overflow: hidden; }
+    .feature-card:hover { border-color: rgba(212,160,36,0.12); transform: translateY(-3px); }
+    .feature-card__icon { font-size: 2.2rem; margin-bottom: 1.25rem; display: block; }
+    .feature-card__title { font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0.08em; color: var(--cream); margin-bottom: 0.75rem; }
+    .feature-card__text { font-family: var(--font-serif); font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary); }
+    .taproom__quote { margin-top: 5rem; text-align: center; padding: 3rem 2rem; border-top: 1px solid rgba(212,160,36,0.08); border-bottom: 1px solid rgba(212,160,36,0.08); }
+    .taproom__quote blockquote { font-family: var(--font-serif); font-size: clamp(1.3rem,3vw,2rem); font-weight: 300; font-style: italic; color: var(--cream-dim); line-height: 1.6; max-width: 700px; margin: 0 auto; }
+    .taproom__quote cite { display: block; margin-top: 1.5rem; font-family: var(--font-body); font-size: 0.75rem; font-style: normal; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber-dim); }
+
+    /* ST BALDRICKS / COMMUNITY */
+    .charity { background: var(--bg-deep); }
+    .charity__grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: start; margin-top: 2rem; }
+    .charity__desc { font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 1.5rem; }
+    .charity__cta { display: inline-block; font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.2em; padding: 0.8rem 2rem; border: 1px solid var(--green); color: var(--green); transition: all 0.3s; margin-top: 0.5rem; }
+    .charity__cta:hover { background: var(--green); color: var(--bg-deep); }
+    .charity__stats-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.04); padding: 2.5rem; }
+    .charity__raised-label { font-family: var(--font-body); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .charity__raised-num { font-family: var(--font-display); font-size: 3.5rem; color: var(--green); }
+    .charity__goal { font-family: var(--font-body); font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; }
+    .charity__progress { width: 100%; height: 6px; background: rgba(255,255,255,0.06); margin-top: 1.5rem; overflow: hidden; }
+    .charity__progress-bar { height: 100%; background: linear-gradient(90deg, var(--green), var(--amber)); width: 0%; transition: width 1.5s cubic-bezier(0.16,1,0.3,1); }
+    .charity__progress-bar.animated { width: 100%; }
+    .charity__leaders { margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem; }
+    .charity__leaders h4 { font-family: var(--font-body); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
+    .charity__leader { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.03); font-family: var(--font-body); font-size: 0.9rem; }
+    .charity__leader-name { color: var(--cream-dim); }
+    .charity__leader-amt { color: var(--green); font-weight: 600; }
+    .charity__date { font-family: var(--font-body); font-size: 0.85rem; color: var(--amber); margin-top: 1.5rem; }
+
+    /* BLOG */
+    .blog { background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 50%, var(--bg-deep) 100%); }
+    .blog__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+    .blog-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.04); padding: 2.5rem; transition: all 0.4s; }
+    .blog-card:hover { border-color: rgba(212,160,36,0.15); transform: translateY(-4px); }
+    .blog-card__date { font-family: var(--font-body); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--amber-dim); margin-bottom: 1rem; }
+    .blog-card__title { font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.06em; color: var(--cream); line-height: 1.15; margin-bottom: 1rem; }
+    .blog-card__excerpt { font-family: var(--font-serif); font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 1.5rem; }
+    .blog-card__link { font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--amber); }
+
+    /* BOOK EVENT */
+    .book-event { background: var(--bg-deep); }
+    .book-event__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2rem; }
+    .book-event__info p { font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 1.5rem; }
+    .book-event__perks { list-style: none; }
+    .book-event__perks li { font-family: var(--font-body); font-size: 0.95rem; color: var(--text-secondary); padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); padding-left: 1.5rem; position: relative; }
+    .book-event__perks li::before { content: ''; position: absolute; left: 0; top: 50%; width: 6px; height: 6px; background: var(--amber); transform: translateY(-50%) rotate(45deg); }
+
+    /* FORMS */
+    .form { display: flex; flex-direction: column; gap: 1.25rem; }
+    .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .form__field { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form__label { font-family: var(--font-body); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
+    .form__input, .form__textarea, .form__select {
+      font-family: var(--font-body); font-size: 0.9rem; color: var(--cream);
+      background: rgba(20,20,20,0.8); border: 1px solid rgba(255,255,255,0.08);
+      padding: 0.85rem 1rem; outline: none; transition: border-color 0.3s;
     }
-
-    .tap-card__name {
-      font-family: var(--font-display);
-      font-size: 1.65rem;
-      letter-spacing: 0.06em;
-      color: var(--cream);
-      line-height: 1.1;
-      margin-bottom: 0.75rem;
+    .form__input:focus, .form__textarea:focus, .form__select:focus { border-color: var(--amber); }
+    .form__textarea { resize: vertical; min-height: 140px; }
+    .form__select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239A9083' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+    .form__submit {
+      font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.25em;
+      padding: 0.9rem 2.5rem; border: 1px solid var(--amber); background: none;
+      color: var(--amber); cursor: pointer; transition: all 0.3s; align-self: flex-start;
     }
+    .form__submit:hover { background: var(--amber); color: var(--bg-deep); }
 
-    .tap-card__desc {
-      font-family: var(--font-serif);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: var(--text-secondary);
-    }
-
-    .tap-card__meta {
-      display: flex;
-      gap: 1.5rem;
-      margin-top: 1.25rem;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .tap-card__abv, .tap-card__price {
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-    }
-
-    .tap-card__abv strong, .tap-card__price strong {
-      color: var(--amber);
-      font-weight: 600;
-    }
-
-    .tap-card--featured {
-      grid-column: span 2;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      padding: 2.5rem;
-      border-color: rgba(212, 160, 36, 0.12);
-      background: linear-gradient(135deg, var(--bg-card), rgba(26, 21, 16, 0.8));
-    }
-
-    .tap-card--featured .tap-card__badge {
-      font-family: var(--font-body);
-      font-size: 0.6rem;
-      font-weight: 600;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--amber);
-      background: rgba(212, 160, 36, 0.1);
-      padding: 0.3rem 0.8rem;
-      display: inline-block;
-      margin-bottom: 1rem;
-    }
-
-    /* ═══════════════════════════════════════════════
-       TAPROOM
-    ═══════════════════════════════════════════════ */
-    .taproom {
-      background:
-        radial-gradient(ellipse at 80% 40%, rgba(176, 55, 55, 0.06) 0%, transparent 50%),
-        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 50%, var(--bg-deep) 100%);
-    }
-
-    .taproom__features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .feature-card {
-      padding: 2.5rem 2rem;
-      border: 1px solid rgba(255,255,255,0.04);
-      background: rgba(20, 20, 20, 0.5);
-      transition: all 0.4s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .feature-card:hover {
-      border-color: rgba(212, 160, 36, 0.12);
-      transform: translateY(-3px);
-    }
-
-    .feature-card__icon {
-      font-size: 2.2rem;
-      margin-bottom: 1.25rem;
-      display: block;
-    }
-
-    .feature-card__title {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      letter-spacing: 0.08em;
-      color: var(--cream);
-      margin-bottom: 0.75rem;
-    }
-
-    .feature-card__text {
-      font-family: var(--font-serif);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: var(--text-secondary);
-    }
-
-    .taproom__quote {
-      margin-top: 5rem;
-      text-align: center;
-      padding: 3rem 2rem;
-      border-top: 1px solid rgba(212, 160, 36, 0.08);
-      border-bottom: 1px solid rgba(212, 160, 36, 0.08);
-    }
-
-    .taproom__quote blockquote {
-      font-family: var(--font-serif);
-      font-size: clamp(1.3rem, 3vw, 2rem);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--cream-dim);
-      line-height: 1.6;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .taproom__quote cite {
-      display: block;
-      margin-top: 1.5rem;
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      font-style: normal;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--amber-dim);
-    }
-
-    /* ═══════════════════════════════════════════════
-       VISIT
-    ═══════════════════════════════════════════════ */
-    .visit {
-      background: var(--bg-deep);
-    }
-
-    .visit__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      margin-top: 3rem;
-    }
-
-    .visit__info h3 {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      letter-spacing: 0.12em;
-      color: var(--cream);
-      margin-bottom: 1.25rem;
-      margin-top: 2.5rem;
-    }
-
-    .visit__info h3:first-child { margin-top: 0; }
-
-    .visit__address {
-      font-family: var(--font-serif);
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: var(--text-secondary);
-    }
-
-    .visit__address a {
-      color: var(--amber);
-      border-bottom: 1px solid rgba(212, 160, 36, 0.3);
-    }
-
-    .hours-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .hours-table tr {
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-    }
-
-    .hours-table td {
-      padding: 0.65rem 0;
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-    }
-
-    .hours-table td:first-child {
-      font-weight: 500;
-      color: var(--cream-dim);
-      width: 45%;
-    }
-
+    /* CONTACT / VISIT */
+    .contact { background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 50%, var(--bg-deep) 100%); }
+    .contact__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+    .contact__info h3 { font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 0.12em; color: var(--cream); margin-bottom: 1.25rem; margin-top: 2.5rem; }
+    .contact__info h3:first-child { margin-top: 0; }
+    .contact__address { font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); }
+    .contact__address a { color: var(--amber); border-bottom: 1px solid rgba(212,160,36,0.3); }
+    .hours-table { width: 100%; border-collapse: collapse; }
+    .hours-table tr { border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .hours-table td { padding: 0.65rem 0; font-family: var(--font-body); font-size: 0.9rem; color: var(--text-secondary); }
+    .hours-table td:first-child { font-weight: 500; color: var(--cream-dim); width: 45%; }
     .hours-table .closed td { color: var(--text-muted); }
+    .contact__map { aspect-ratio: 1; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.04); overflow: hidden; position: relative; }
+    .contact__map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(0.8) brightness(0.6) contrast(1.2); transition: filter 0.5s; }
+    .contact__map:hover iframe { filter: grayscale(0.4) brightness(0.7) contrast(1.1); }
 
-    .visit__map {
-      aspect-ratio: 1;
-      background: var(--bg-card);
-      border: 1px solid rgba(255,255,255,0.04);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .visit__map iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      filter: grayscale(0.8) brightness(0.6) contrast(1.2);
-      transition: filter 0.5s;
-    }
-
-    .visit__map:hover iframe {
-      filter: grayscale(0.4) brightness(0.7) contrast(1.1);
-    }
-
-    /* ═══════════════════════════════════════════════
-       FOOTER
-    ═══════════════════════════════════════════════ */
-    footer {
-      background: var(--bg-deep);
-      border-top: 1px solid rgba(212, 160, 36, 0.06);
-      padding: 4rem 3rem;
-    }
-
-    .footer__inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer__brand {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      letter-spacing: 0.15em;
-      color: var(--cream);
-    }
-
+    /* FOOTER */
+    footer { background: var(--bg-deep); border-top: 1px solid rgba(212,160,36,0.06); padding: 4rem 3rem; }
+    .footer__inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .footer__brand { font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 0.15em; color: var(--cream); }
     .footer__brand span { color: var(--amber); }
-
-    .footer__legal {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-top: 0.5rem;
-    }
-
-    .footer__social {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .footer__social a {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      transition: color 0.3s;
-    }
-
+    .footer__legal { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; }
+    .footer__social { display: flex; gap: 1.5rem; }
+    .footer__social a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); transition: color 0.3s; }
     .footer__social a:hover { color: var(--amber); }
 
-    /* ═══════════════════════════════════════════════
-       AGE GATE OVERLAY
-    ═══════════════════════════════════════════════ */
-    .age-gate {
-      position: fixed;
-      inset: 0;
-      z-index: 10000;
-      background: rgba(8, 8, 8, 0.97);
-      backdrop-filter: blur(30px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
-      transition: opacity 0.6s, visibility 0.6s;
-    }
-
-    .age-gate.hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    .age-gate__title {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      letter-spacing: 0.06em;
-      color: var(--cream);
-    }
-
+    /* AGE GATE */
+    .age-gate { position: fixed; inset: 0; z-index: 10000; background: rgba(8,8,8,0.97); backdrop-filter: blur(30px); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem; transition: opacity 0.6s, visibility 0.6s; }
+    .age-gate.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .age-gate__title { font-family: var(--font-display); font-size: clamp(2.5rem,6vw,4rem); letter-spacing: 0.06em; color: var(--cream); }
     .age-gate__title span { color: var(--amber); }
+    .age-gate__text { font-family: var(--font-serif); font-size: 1.1rem; color: var(--text-secondary); margin: 1.5rem 0 2.5rem; }
+    .age-gate__btns { display: flex; gap: 1rem; }
+    .age-gate__btn { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.2em; padding: 0.8rem 2.5rem; border: 1px solid var(--amber); background: none; color: var(--amber); cursor: pointer; transition: all 0.3s; }
+    .age-gate__btn--yes:hover { background: var(--amber); color: var(--bg-deep); }
+    .age-gate__btn--no { border-color: var(--text-muted); color: var(--text-muted); }
+    .age-gate__btn--no:hover { border-color: var(--red); color: var(--red); }
 
-    .age-gate__text {
-      font-family: var(--font-serif);
-      font-size: 1.1rem;
-      color: var(--text-secondary);
-      margin: 1.5rem 0 2.5rem;
-    }
-
-    .age-gate__btns {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .age-gate__btn {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      letter-spacing: 0.2em;
-      padding: 0.8rem 2.5rem;
-      border: 1px solid var(--amber);
-      background: none;
-      color: var(--amber);
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .age-gate__btn--yes:hover {
-      background: var(--amber);
-      color: var(--bg-deep);
-    }
-
-    .age-gate__btn--no {
-      border-color: var(--text-muted);
-      color: var(--text-muted);
-    }
-
-    .age-gate__btn--no:hover {
-      border-color: var(--red);
-      color: var(--red);
-    }
-
-    /* ═══════════════════════════════════════════════
-       RESPONSIVE
-    ═══════════════════════════════════════════════ */
+    /* RESPONSIVE */
     @media (max-width: 900px) {
       section { padding: 5rem 1.5rem; }
-
       .nav { padding: 1rem 1.5rem; }
       .nav__links { display: none; }
       .nav__toggle { display: flex; }
-
-      .about__grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about__grid, .charity__grid, .book-event__grid, .contact__grid, .blog__grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .about__visual { max-height: 350px; }
-
-      .tap-card--featured {
-        grid-column: span 1;
-        grid-template-columns: 1fr;
-      }
-
       .taproom__features { grid-template-columns: 1fr; }
-
-      .visit__grid { grid-template-columns: 1fr; gap: 2rem; }
-
       .footer__inner { flex-direction: column; gap: 2rem; text-align: center; }
-
       .about__stats { flex-wrap: wrap; gap: 2rem; }
-
-      .ontap__header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .beers__header { flex-direction: column; align-items: flex-start; }
+      .form__row { grid-template-columns: 1fr; }
     }
-
-    @media (max-width: 600px) {
-      .tap-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 600px) { .beer-list.active { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -954,19 +321,20 @@
     </div>
   </div>
 
-  <!-- NAVIGATION -->
+  <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav__logo">TAKE <span>TWO</span></div>
     <ul class="nav__links">
-      <li><a href="#story">Our Story</a></li>
-      <li><a href="#ontap">On Tap</a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#beers">Beers</a></li>
       <li><a href="#taproom">Taproom</a></li>
-      <li><a href="#visit">Visit</a></li>
+      <li><a href="#charity">St. Baldrick's</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#book">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#visit" class="nav__cta">VISIT US</a>
-    <div class="nav__toggle" onclick="this.classList.toggle('active')" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </div>
+    <a href="#book" class="nav__cta">BOOK EVENT</a>
+    <div class="nav__toggle" onclick="this.classList.toggle('active')" aria-label="Menu"><span></span><span></span><span></span></div>
   </nav>
 
   <!-- HERO -->
@@ -976,16 +344,11 @@
     <div class="hero__rule reveal"></div>
     <h1 class="hero__title reveal">TAKE <em>TWO</em></h1>
     <p class="hero__tagline reveal">One is just not enough.</p>
-    <p class="hero__meta reveal">
-      Dark Beer Specialists <span>&bull;</span> Est. 2023 <span>&bull;</span> Farm Brewery
-    </p>
-    <div class="hero__scroll">
-      <span>Scroll</span>
-      <div class="hero__scroll-line"></div>
-    </div>
+    <p class="hero__meta reveal">Dark Beer Specialists <span>&bull;</span> Est. 2023 <span>&bull;</span> Farm Brewery</p>
+    <div class="hero__scroll"><span>Scroll</span><div class="hero__scroll-line"></div></div>
   </header>
 
-  <!-- ABOUT / STORY -->
+  <!-- STORY -->
   <section class="about" id="story">
     <div class="section-inner">
       <div class="about__grid">
@@ -994,21 +357,12 @@
           <h2 class="section-title reveal">TWICE THE<br>FLAVOR</h2>
           <div class="section-rule reveal"></div>
           <p class="reveal">Thanksgiving 2013. Two brothers-in-law, a kitchen, and a homebrew kit that changed everything. Brendan Byrne and David Cristelot discovered a shared obsession that night&mdash;the deep, roasted complexity of dark beers. Porters. Stouts. The kind of craft that rewards patience and punishes shortcuts.</p>
-          <p class="reveal">Ten years of relentless refinement followed. Living rooms converted to makeshift brewhouses. Competitions entered and won. Recipes that started as curiosity became something worth building a life around. David stepped away from finance. Brendan from IT. Both took a second chance on something that actually mattered.</p>
+          <p class="reveal">Ten years of relentless refinement followed. Competitions entered and won. Recipes that started as curiosity became something worth building a life around. David stepped away from finance. Brendan from IT. Both took a second chance on something that actually mattered.</p>
           <p class="reveal">In September 2023, Take Two opened its doors on Union Boulevard&mdash;steps from the Bay Shore LIRR station. The name carries a double meaning: a second career for its founders, and the conviction that one great beer is just never enough.</p>
           <div class="about__stats reveal">
-            <div>
-              <div class="about__stat-num">10</div>
-              <div class="about__stat-label">Years Brewing</div>
-            </div>
-            <div>
-              <div class="about__stat-num">10</div>
-              <div class="about__stat-label">Taps Flowing</div>
-            </div>
-            <div>
-              <div class="about__stat-num">2</div>
-              <div class="about__stat-label">Founders</div>
-            </div>
+            <div><div class="about__stat-num">10</div><div class="about__stat-label">Years Brewing</div></div>
+            <div><div class="about__stat-num">24</div><div class="about__stat-label">Beers Crafted</div></div>
+            <div><div class="about__stat-num">2</div><div class="about__stat-label">Founders</div></div>
           </div>
         </div>
         <div class="about__visual reveal">
@@ -1021,100 +375,180 @@
     </div>
   </section>
 
-  <!-- ON TAP -->
-  <section class="ontap" id="ontap">
+  <!-- BEERS -->
+  <section class="beers" id="beers">
     <div class="section-inner">
-      <div class="ontap__header">
+      <div class="beers__header">
         <div>
-          <div class="section-label reveal">What's Pouring</div>
-          <h2 class="section-title reveal">ON TAP</h2>
+          <div class="section-label reveal">Full Beer Menu</div>
+          <h2 class="section-title reveal">OUR BEERS</h2>
           <div class="section-rule reveal"></div>
         </div>
-        <div class="ontap__note reveal">Flights $10 &bull; Pints $8 &bull; Crowlers available</div>
+        <div class="beers__note reveal">Flights $10 &bull; Pints $8 &bull; Crowlers available</div>
       </div>
 
-      <div class="tap-grid">
-        <!-- Featured Beer -->
-        <div class="tap-card tap-card--featured reveal" data-style="stout">
-          <div>
-            <div class="tap-card__badge">Award Winner</div>
-            <div class="tap-card__style">Oatmeal Milk Stout</div>
-            <div class="tap-card__name">BIG D'S OATMEAL MILK STOUT</div>
-            <div class="tap-card__desc">First place homebrew competition winner turned flagship commercial brew. Silky, smooth, with a rich oat backbone and sweet lactose finish that makes every sip dangerously easy.</div>
-            <div class="tap-card__meta">
-              <div class="tap-card__abv">ABV <strong>5.8%</strong></div>
-              <div class="tap-card__price">Pint <strong>$8</strong></div>
-            </div>
-          </div>
-          <div>
-            <div class="tap-card__style">Mocha Porter</div>
-            <div class="tap-card__name">DARK SUNRISE</div>
-            <div class="tap-card__desc">Coffee-infused porter with Madagascar vanilla. Like a morning latte that decided to skip work and hang out at the brewery instead. Rich, complex, dangerously drinkable.</div>
-            <div class="tap-card__meta">
-              <div class="tap-card__abv">ABV <strong>6.2%</strong></div>
-              <div class="tap-card__price">Pint <strong>$8</strong></div>
-            </div>
-          </div>
-        </div>
+      <div class="beers__tabs reveal">
+        <button class="beers__tab active" onclick="switchTab('on-tap')">ON TAP NOW</button>
+        <button class="beers__tab" onclick="switchTab('off-tap')">SEASONAL &amp; ARCHIVED</button>
+      </div>
 
+      <!-- ON TAP -->
+      <div class="beer-list active" id="on-tap">
+        <div class="tap-card reveal" data-style="stout">
+          <div class="tap-card__badge">NY State 2024 CBC Gold Medal</div>
+          <div class="tap-card__style">Oatmeal Milk Stout</div>
+          <div class="tap-card__name">BIG D'S</div>
+          <div class="tap-card__desc">Smooth, sweet stout with coffee and chocolate hints. Named for Damon Hewlette (ALS). Competition winner turned flagship brew.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>8.1%</strong></div></div>
+        </div>
+        <div class="tap-card reveal" data-style="porter">
+          <div class="tap-card__style">Mocha Latte Porter</div>
+          <div class="tap-card__name">DARK SUNRISE</div>
+          <div class="tap-card__desc">Breakfast porter with coffee beans and vanilla. Evolved from the EB Porter into something dangerously drinkable.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>6.4%</strong></div></div>
+        </div>
         <div class="tap-card reveal" data-style="porter">
           <div class="tap-card__style">Baltic Porter</div>
-          <div class="tap-card__name">EB BALTIC PORTER</div>
-          <div class="tap-card__desc">Bold and layered with dark fruit, toffee, and a long clean finish. Old-world style, new-world craft.</div>
-          <div class="tap-card__meta">
-            <div class="tap-card__abv">ABV <strong>7.4%</strong></div>
-            <div class="tap-card__price">Pint <strong>$8</strong></div>
-          </div>
+          <div class="tap-card__name">E.B.</div>
+          <div class="tap-card__desc">Bold and layered with currant and roasted malt. Second batch born from an exploding bucket incident. Worth the chaos.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>6.6%</strong></div></div>
         </div>
-
         <div class="tap-card reveal" data-style="seasonal">
-          <div class="tap-card__style">Seasonal Stout</div>
-          <div class="tap-card__name">PEPPERMINT MILK STOUT</div>
-          <div class="tap-card__desc">Chocolate stout base layered with cool peppermint. Holiday comfort in a glass, available while it lasts.</div>
-          <div class="tap-card__meta">
-            <div class="tap-card__abv">ABV <strong>5.5%</strong></div>
-            <div class="tap-card__price">Pint <strong>$8</strong></div>
-          </div>
+          <div class="tap-card__style">Milk Stout &bull; Chocolate &amp; Peppermint</div>
+          <div class="tap-card__name">PEPPERMINT BARK AT THE MOON</div>
+          <div class="tap-card__desc">Smooth, chocolatey base with an arctic peppermint swirl. Holiday comfort in a glass.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>8.5%</strong></div></div>
         </div>
-
+        <div class="tap-card reveal" data-style="ipa">
+          <div class="tap-card__style">Black IPA / Cascadian Dark Ale</div>
+          <div class="tap-card__name">CASCADES OF DARKNESS</div>
+          <div class="tap-card__desc">Dark color but lighter IPA flavor and feel. The bridge between dark-beer lovers and hop heads.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>5.5%</strong></div></div>
+        </div>
         <div class="tap-card reveal" data-style="ipa">
           <div class="tap-card__style">India Pale Ale</div>
-          <div class="tap-card__name">UNION BLVD IPA</div>
-          <div class="tap-card__desc">Hazy, juicy, tropical. Citra and Mosaic hops punch through a pillowy malt body. Named for the street we call home.</div>
-          <div class="tap-card__meta">
-            <div class="tap-card__abv">ABV <strong>6.8%</strong></div>
-            <div class="tap-card__price">Pint <strong>$8</strong></div>
-          </div>
+          <div class="tap-card__name">WICKEDNESS</div>
+          <div class="tap-card__desc">Classic IPA — dry, crisp, with a citrusy grapefruit finish that cuts clean.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>7.1%</strong></div></div>
         </div>
-
+        <div class="tap-card reveal" data-style="sour">
+          <div class="tap-card__style">Fruited Sour</div>
+          <div class="tap-card__name">72 HOUR SOUR</div>
+          <div class="tap-card__desc">Lemon and tangerine citrusy sour. Bright, tart, refreshing — the antidote to a heavy pour.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>6.2%</strong></div></div>
+        </div>
+        <div class="tap-card reveal" data-style="lager">
+          <div class="tap-card__style">American Lager</div>
+          <div class="tap-card__name">HURRICANE RIDGE</div>
+          <div class="tap-card__desc">Refreshing, crushable, perfect for parties and the beach. The fan favorite that converts lager drinkers.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>5.0%</strong></div></div>
+        </div>
+        <div class="tap-card reveal" data-style="bock">
+          <div class="tap-card__style">German Bock</div>
+          <div class="tap-card__name">I WANNA BOCK RIGHT NOW</div>
+          <div class="tap-card__desc">Classic German bock with hop tickle and caramel malt sweetness. Strong, warm, satisfying.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>7.0%</strong></div></div>
+        </div>
         <div class="tap-card reveal" data-style="red">
           <div class="tap-card__style">Irish Red Ale</div>
-          <div class="tap-card__name">BYRNE'S IRISH RED</div>
-          <div class="tap-card__desc">Toasty caramel malt, a whisper of toffee, and a dry, biscuity finish. A heritage pour from co-founder Brendan's roots.</div>
-          <div class="tap-card__meta">
-            <div class="tap-card__abv">ABV <strong>5.0%</strong></div>
-            <div class="tap-card__price">Pint <strong>$8</strong></div>
-          </div>
+          <div class="tap-card__name">LAMBS TO THE COSMIC SLAUGHTER</div>
+          <div class="tap-card__desc">Traditional Irish Red. Malt forward with a sweet finish and roasted backbone.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>5.8%</strong></div></div>
         </div>
-
-        <div class="tap-card reveal" data-style="lager">
-          <div class="tap-card__style">Craft Lager</div>
-          <div class="tap-card__name">SHORE THING LAGER</div>
-          <div class="tap-card__desc">Crisp, clean, crushable. Noble hops and pilsner malt in perfect harmony. The gateway pour for your light-beer friends.</div>
-          <div class="tap-card__meta">
-            <div class="tap-card__abv">ABV <strong>4.6%</strong></div>
-            <div class="tap-card__price">Pint <strong>$8</strong></div>
-          </div>
+        <div class="tap-card reveal" data-style="wheat">
+          <div class="tap-card__style">Wheat Ale</div>
+          <div class="tap-card__name">RHUBERRY FIELDS FOREVER</div>
+          <div class="tap-card__desc">Strawberry rhubarb pie in a glass — tart, sweet, summer in every sip.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>5.6%</strong></div></div>
         </div>
-
+        <div class="tap-card reveal" data-style="pale">
+          <div class="tap-card__badge">St. Baldrick's Charity Brew</div>
+          <div class="tap-card__style">SMaSH Pale Ale</div>
+          <div class="tap-card__name">ST. BALDRICK'S SMASH KIDS CANCER</div>
+          <div class="tap-card__desc">Brewed for the annual St. Baldrick's fundraiser. Light upfront with a hoppy punch at the finish.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>5.6%</strong></div></div>
+        </div>
         <div class="tap-card reveal" data-style="pale">
           <div class="tap-card__style">Pale Ale</div>
-          <div class="tap-card__name">SECOND CHANCE PALE</div>
-          <div class="tap-card__desc">Balanced and bright with citrus zest and a toasted-biscuit backbone. The beer that bridges dark and light drinkers.</div>
-          <div class="tap-card__meta">
-            <div class="tap-card__abv">ABV <strong>5.2%</strong></div>
-            <div class="tap-card__price">Pint <strong>$8</strong></div>
-          </div>
+          <div class="tap-card__name">TAMARACK</div>
+          <div class="tap-card__desc">Dry hopped with Cascade, Mosaic, and Idaho 7. Pine-forward with colorful, layered flavor.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>6.7%</strong></div></div>
+        </div>
+        <div class="tap-card reveal" data-style="wit">
+          <div class="tap-card__style">Belgian Wit</div>
+          <div class="tap-card__name">THIS IS HOW WE DO WIT</div>
+          <div class="tap-card__desc">Sweet, malty, golden, cloudy. Orange peel, coriander, and citrus — classic Belgian character.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>5.9%</strong></div></div>
+        </div>
+      </div>
+
+      <!-- OFF TAP / SEASONAL -->
+      <div class="beer-list" id="off-tap">
+        <div class="tap-card tap-card--off reveal" data-style="stout">
+          <div class="tap-card__style">Oatmeal Milk Stout w/ Coffee</div>
+          <div class="tap-card__name">BIG D'S &mdash; ON THE DARTH SIDE</div>
+          <div class="tap-card__desc">Cold pressed coffee variation of the flagship. Dark side of the stout spectrum.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>5.5%</strong></div></div>
+        </div>
+        <div class="tap-card tap-card--off reveal" data-style="lager">
+          <div class="tap-card__style">Mexican Lager</div>
+          <div class="tap-card__name">CANTINA CLASICA</div>
+          <div class="tap-card__desc">Cinco de Mayo special. Crisp with lime and jalape&ntilde;o option. Cerveza meets craft.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>5.0%</strong></div></div>
+        </div>
+        <div class="tap-card tap-card--off reveal" data-style="lager">
+          <div class="tap-card__style">American Lager</div>
+          <div class="tap-card__name">FALCONER'S LAGER</div>
+          <div class="tap-card__desc">Czech Saaz and Falconer's Flight hops. Originally brewed for a graduation party.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>4.5%</strong></div></div>
+        </div>
+        <div class="tap-card tap-card--off reveal" data-style="saison">
+          <div class="tap-card__style">Peach Vanilla Saison</div>
+          <div class="tap-card__name">GEORGIA ON MY MIND</div>
+          <div class="tap-card__desc">Peach and vanilla farmhouse blend. Summer in Georgia, brewed on Long Island.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>8.9%</strong></div></div>
+        </div>
+        <div class="tap-card tap-card--off reveal" data-style="milkshake">
+          <div class="tap-card__style">Milkshake IPA</div>
+          <div class="tap-card__name">NEXT FERRY OVER</div>
+          <div class="tap-card__desc">Passionfruit, coconut, pineapple, lactose. A Fire Island vacation in a pint glass.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>5.5%</strong></div></div>
+        </div>
+        <div class="tap-card tap-card--off reveal" data-style="lager">
+          <div class="tap-card__style">M&auml;rzen Lager</div>
+          <div class="tap-card__name">OK2BERFEST</div>
+          <div class="tap-card__desc">German M&auml;rzen. Amber, sweet, crisp &mdash; Oktoberfest in every pour.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>5.5%</strong></div></div>
+        </div>
+        <div class="tap-card tap-card--off reveal" data-style="pumpkin">
+          <div class="tap-card__style">Pumpkin Ale</div>
+          <div class="tap-card__name">PUMPKIN PI</div>
+          <div class="tap-card__desc">Fall seasonal with a precisely irrational ABV. Sugar rim optional but recommended.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>6.28%</strong></div></div>
+        </div>
+        <div class="tap-card tap-card--off reveal" data-style="saison">
+          <div class="tap-card__style">Raspberry Saison</div>
+          <div class="tap-card__name">SHE WORE A&hellip;</div>
+          <div class="tap-card__desc">Farmhouse style, amber, a Prince tribute. Raspberry beret in liquid form.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>6.3%</strong></div></div>
+        </div>
+        <div class="tap-card tap-card--off reveal" data-style="wheat">
+          <div class="tap-card__style">Wheat Ale</div>
+          <div class="tap-card__name">SUNSHINE</div>
+          <div class="tap-card__desc">Mango and guava tropical wheat. Spring and summer in a glass.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>4.7%</strong></div></div>
+        </div>
+        <div class="tap-card tap-card--off reveal" data-style="ipa">
+          <div class="tap-card__style">New England IPA</div>
+          <div class="tap-card__name">WICKED PISSA</div>
+          <div class="tap-card__desc">Mosaic and Citra hops. Not too aggressive &mdash; the gateway NEIPA for IPA novices.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>7.0%</strong></div></div>
+        </div>
+        <div class="tap-card tap-card--off reveal" data-style="seasonal">
+          <div class="tap-card__style">Winter Ale</div>
+          <div class="tap-card__name">WINTER SOLSTICE</div>
+          <div class="tap-card__desc">Honey, brown sugar, spices. A rich, warming pour for the coldest nights.</div>
+          <div class="tap-card__meta"><div class="tap-card__abv">ABV <strong>7.6%</strong></div></div>
         </div>
       </div>
     </div>
@@ -1126,54 +560,161 @@
       <div class="section-label reveal">The Space</div>
       <h2 class="section-title reveal">THE TAPROOM</h2>
       <div class="section-rule reveal"></div>
-      <p class="reveal" style="font-family: var(--font-serif); font-size: 1.15rem; line-height: 1.8; color: var(--text-secondary); max-width: 650px;">
+      <p class="reveal" style="font-family:var(--font-serif);font-size:1.15rem;line-height:1.8;color:var(--text-secondary);max-width:650px;">
         A 2,800-square-foot taproom with a fireplace, board games, darts, and the kind of ambient warmth
         that makes three hours feel like thirty minutes. Plus a 3,000-square-foot outdoor patio for when Long Island
         weather decides to cooperate.
       </p>
-
       <div class="taproom__features">
-        <div class="feature-card reveal">
-          <span class="feature-card__icon" aria-hidden="true">&#127866;</span>
-          <div class="feature-card__title">10 ROTATING TAPS</div>
-          <p class="feature-card__text">Always something new, always three dark options. Flights of four for $10 let you explore the full range.</p>
-        </div>
-        <div class="feature-card reveal">
-          <span class="feature-card__icon" aria-hidden="true">&#127829;</span>
-          <div class="feature-card__title">FOOD TRUCKS</div>
-          <p class="feature-card__text">Rotating local food trucks serving pizza, finger food, and whatever pairs best with a stout on a Friday night.</p>
-        </div>
-        <div class="feature-card reveal">
-          <span class="feature-card__icon" aria-hidden="true">&#127926;</span>
-          <div class="feature-card__title">LIVE MUSIC & EVENTS</div>
-          <p class="feature-card__text">Local acts, trivia nights, private parties on the patio. Check our socials for what's coming next.</p>
-        </div>
+        <div class="feature-card reveal"><span class="feature-card__icon">&#127866;</span><div class="feature-card__title">14 ROTATING TAPS</div><p class="feature-card__text">Always something new, always dark options. Flights of four for $10 let you explore the range.</p></div>
+        <div class="feature-card reveal"><span class="feature-card__icon">&#127829;</span><div class="feature-card__title">FOOD TRUCKS</div><p class="feature-card__text">Rotating local food trucks serving pizza, finger food, and whatever pairs best with a stout on a Friday.</p></div>
+        <div class="feature-card reveal"><span class="feature-card__icon">&#127926;</span><div class="feature-card__title">LIVE MUSIC &amp; EVENTS</div><p class="feature-card__text">Local acts, trivia nights, private parties on the patio. Check our socials for what's next.</p></div>
       </div>
-
       <div class="taproom__quote reveal">
-        <blockquote>
-          &ldquo;We spent ten years making beer in our living rooms. Turns out the only thing missing was a room full of people to drink it with.&rdquo;
-        </blockquote>
+        <blockquote>&ldquo;We spent ten years making beer in our living rooms. Turns out the only thing missing was a room full of people to drink it with.&rdquo;</blockquote>
         <cite>Brendan Byrne &amp; David Cristelot, Co-Founders</cite>
       </div>
     </div>
   </section>
 
-  <!-- VISIT -->
-  <section class="visit" id="visit">
+  <!-- ST. BALDRICK'S -->
+  <section class="charity" id="charity">
     <div class="section-inner">
-      <div class="section-label reveal">Find Us</div>
-      <h2 class="section-title reveal">VISIT THE<br>BREWERY</h2>
+      <div class="section-label reveal">Community</div>
+      <h2 class="section-title reveal">ST. BALDRICK'S<br>FUNDRAISER</h2>
       <div class="section-rule reveal"></div>
 
-      <div class="visit__grid">
-        <div class="visit__info reveal">
+      <div class="charity__grid">
+        <div class="reveal">
+          <p class="charity__desc">Every year, Take Two hosts a head-shaving fundraiser for the <strong style="color:var(--cream)">St. Baldrick's Foundation</strong> &mdash; the nation's largest private funder of childhood cancer research grants. Participants brave the shave, the community rallies, and every dollar goes straight to funding research that saves kids' lives.</p>
+          <p class="charity__desc">Every 2 minutes a child is diagnosed with cancer. This event is our way of fighting back &mdash; one shaved head, one pint, one donation at a time.</p>
+          <p class="charity__desc">Co-founder David Cristelot and the Association of Long Island Homebrew Clubs lead the charge as top fundraisers year after year. The brewery also brews a special <strong style="color:var(--cream)">SMaSH Kids Cancer Pale Ale</strong> for the event, available on tap while it lasts.</p>
+          <a href="https://www.stbaldricks.org/events/taketwobrewery2026" target="_blank" rel="noopener" class="charity__cta">DONATE OR SIGN UP</a>
+        </div>
+        <div class="charity__stats-card reveal">
+          <div class="charity__raised-label">Amount Raised</div>
+          <div class="charity__raised-num">$18,471</div>
+          <div class="charity__goal">Goal: $15,000 &mdash; Exceeded!</div>
+          <div class="charity__progress"><div class="charity__progress-bar" id="charityBar"></div></div>
+          <div class="charity__leaders">
+            <h4>Top Fundraisers</h4>
+            <div class="charity__leader"><span class="charity__leader-name">John Murdocco</span><span class="charity__leader-amt">$4,607</span></div>
+            <div class="charity__leader"><span class="charity__leader-name">Joseph Cappellino</span><span class="charity__leader-amt">$3,889</span></div>
+            <div class="charity__leader"><span class="charity__leader-name">David Cristelot</span><span class="charity__leader-amt">$1,388</span></div>
+            <div class="charity__leader"><span class="charity__leader-name">LI Homebrew Clubs</span><span class="charity__leader-amt">$15,884</span></div>
+          </div>
+          <div class="charity__date">Next Event: March 21, 2026 &bull; 5&ndash;9 PM</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="blog" id="blog">
+    <div class="section-inner">
+      <div class="section-label reveal">News &amp; Updates</div>
+      <h2 class="section-title reveal">FROM THE<br>BREWERY</h2>
+      <div class="section-rule reveal"></div>
+
+      <div class="blog__grid">
+        <div class="blog-card reveal">
+          <div class="blog-card__date">Competition &bull; 2024</div>
+          <div class="blog-card__title">BIG D'S OATMEAL MILK STOUT TAKES 1ST PLACE!</div>
+          <p class="blog-card__excerpt">We entered Big D's into a brewing competition last month where it took first place in the competition, with our highest score coming from the certified judge panel. A proud moment for the entire Take Two team&hellip;</p>
+          <a href="https://www.taketwobrewery.com/blog" target="_blank" rel="noopener" class="blog-card__link">Read More &rarr;</a>
+        </div>
+        <div class="blog-card reveal">
+          <div class="blog-card__date">Community &bull; 2026</div>
+          <div class="blog-card__title">ST. BALDRICK'S 2026 EXCEEDS $18K GOAL</div>
+          <p class="blog-card__excerpt">Our annual head-shaving fundraiser for childhood cancer research smashed its $15,000 goal, raising $18,471 thanks to the incredible generosity of the Bay Shore community and the Association of Long Island Homebrew Clubs&hellip;</p>
+          <a href="https://www.stbaldricks.org/events/taketwobrewery2026" target="_blank" rel="noopener" class="blog-card__link">See Event &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK AN EVENT -->
+  <section class="book-event" id="book">
+    <div class="section-inner">
+      <div class="section-label reveal">Private Events</div>
+      <h2 class="section-title reveal">BOOK AN<br>EVENT</h2>
+      <div class="section-rule reveal"></div>
+
+      <div class="book-event__grid">
+        <div class="reveal">
+          <div class="book-event__info">
+            <p>Looking to host an event at Take Two Brewery? Whether it's a birthday party, corporate gathering, fundraiser, or just a reason to get 50 of your closest friends together over craft beer &mdash; we've got the space and the taps to make it happen.</p>
+            <p>Our 3,000-square-foot outdoor patio is available for private bookings, and the taproom can be configured for groups of all sizes.</p>
+          </div>
+          <ul class="book-event__perks">
+            <li>Private patio access for large groups</li>
+            <li>Custom beer flights &amp; packages</li>
+            <li>Food truck coordination</li>
+            <li>Live music &amp; entertainment options</li>
+            <li>Fundraiser hosting (we love a good cause)</li>
+            <li>Corporate &amp; team-building events</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <form class="form" onsubmit="handleBooking(event)">
+            <div class="form__row">
+              <div class="form__field">
+                <label class="form__label">First Name</label>
+                <input type="text" class="form__input" name="first_name" required>
+              </div>
+              <div class="form__field">
+                <label class="form__label">Last Name</label>
+                <input type="text" class="form__input" name="last_name" required>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__field">
+                <label class="form__label">Phone</label>
+                <input type="tel" class="form__input" name="phone" required>
+              </div>
+              <div class="form__field">
+                <label class="form__label">Email</label>
+                <input type="email" class="form__input" name="email" required>
+              </div>
+            </div>
+            <div class="form__field">
+              <label class="form__label">Event Type</label>
+              <select class="form__select" name="event_type">
+                <option value="">Select an event type</option>
+                <option>Birthday Party</option>
+                <option>Corporate / Team Building</option>
+                <option>Fundraiser</option>
+                <option>Holiday Party</option>
+                <option>Private Tasting</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form__field">
+              <label class="form__label">Tell Us About Your Event</label>
+              <textarea class="form__textarea" name="message" placeholder="Approximate date, number of guests, any special requests..." required></textarea>
+            </div>
+            <button type="submit" class="form__submit">SEND INQUIRY</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <div class="section-label reveal">Find Us</div>
+      <h2 class="section-title reveal">VISIT &amp;<br>CONTACT</h2>
+      <div class="section-rule reveal"></div>
+
+      <div class="contact__grid">
+        <div class="contact__info reveal">
           <h3>LOCATION</h3>
-          <div class="visit__address">
-            1676 Union Blvd.<br>
-            Bay Shore, NY 11706<br><br>
+          <div class="contact__address">
+            1676 Union Blvd.<br>Bay Shore, NY 11706<br><br>
             Steps from the Bay Shore LIRR Station<br><br>
-            <a href="tel:+16312056660">(631) 205-6660</a>
+            <a href="tel:+16312056660">(631) 205-6660</a><br>
+            <a href="mailto:taketwobrewery@gmail.com">taketwobrewery@gmail.com</a>
           </div>
 
           <h3>HOURS</h3>
@@ -1188,21 +729,34 @@
           </table>
 
           <h3>CONNECT</h3>
-          <div class="visit__address">
-            <a href="https://www.instagram.com/taketwobrewery/" target="_blank" rel="noopener">Instagram</a> &nbsp;&bull;&nbsp;
-            <a href="https://www.facebook.com/TakeTwoBrewery/" target="_blank" rel="noopener">Facebook</a> &nbsp;&bull;&nbsp;
+          <div class="contact__address">
+            <a href="https://www.instagram.com/taketwobrewery/" target="_blank" rel="noopener">Instagram</a> &bull;
+            <a href="https://www.facebook.com/TakeTwoBrewery/" target="_blank" rel="noopener">Facebook</a> &bull;
             <a href="https://untappd.com/TakeTwoBrewery" target="_blank" rel="noopener">Untappd</a>
           </div>
+
+          <h3>SEND A MESSAGE</h3>
+          <form class="form" onsubmit="handleContact(event)" style="margin-top:0.5rem">
+            <div class="form__row">
+              <div class="form__field">
+                <label class="form__label">Name</label>
+                <input type="text" class="form__input" name="name" required>
+              </div>
+              <div class="form__field">
+                <label class="form__label">Email</label>
+                <input type="email" class="form__input" name="email" required>
+              </div>
+            </div>
+            <div class="form__field">
+              <label class="form__label">Message</label>
+              <textarea class="form__textarea" name="message" placeholder="Questions, feedback, or just say hi..." required></textarea>
+            </div>
+            <button type="submit" class="form__submit">SEND MESSAGE</button>
+          </form>
         </div>
 
-        <div class="visit__map reveal">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.5!2d-73.2454!3d40.7251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e82940a2c98b1d%3A0x3a46ca99d0c9f1a7!2s1676%20Union%20Blvd%2C%20Bay%20Shore%2C%20NY%2011706!5e0!3m2!1sen!2sus!4v1"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Take Two Brewery Location Map"
-          ></iframe>
+        <div class="contact__map reveal">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.5!2d-73.2454!3d40.7251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e82940a2c98b1d%3A0x3a46ca99d0c9f1a7!2s1676%20Union%20Blvd%2C%20Bay%20Shore%2C%20NY%2011706!5e0!3m2!1sen!2sus!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Take Two Brewery Location Map"></iframe>
         </div>
       </div>
     </div>
@@ -1213,37 +767,30 @@
     <div class="footer__inner">
       <div>
         <div class="footer__brand">TAKE <span>TWO</span> BREWERY</div>
-        <div class="footer__legal">&copy; 2024 Take Two Brewery LLC. All rights reserved. Please drink responsibly.</div>
+        <div class="footer__legal">&copy; 2025 Take Two Brewery LLC. All rights reserved. Please drink responsibly.</div>
       </div>
       <div class="footer__social">
         <a href="https://www.instagram.com/taketwobrewery/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.facebook.com/TakeTwoBrewery/" target="_blank" rel="noopener">Facebook</a>
         <a href="https://untappd.com/TakeTwoBrewery" target="_blank" rel="noopener">Untappd</a>
+        <a href="https://www.taketwobrewery.com/blog" target="_blank" rel="noopener">Blog</a>
       </div>
     </div>
   </footer>
 
   <script>
     // Age gate
-    function enterSite() {
-      document.getElementById('ageGate').classList.add('hidden');
-      sessionStorage.setItem('ageVerified', '1');
-    }
-    if (sessionStorage.getItem('ageVerified')) {
-      document.getElementById('ageGate').classList.add('hidden');
-    }
+    function enterSite() { document.getElementById('ageGate').classList.add('hidden'); sessionStorage.setItem('ageVerified','1'); }
+    if (sessionStorage.getItem('ageVerified')) document.getElementById('ageGate').classList.add('hidden');
 
-    // Nav scroll effect
+    // Nav scroll
     const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
 
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Stagger siblings
           const siblings = entry.target.parentElement.querySelectorAll('.reveal');
           const idx = [...siblings].indexOf(entry.target);
           entry.target.style.transitionDelay = `${idx * 0.08}s`;
@@ -1252,17 +799,51 @@
         }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     // Smooth anchor scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
+      a.addEventListener('click', e => { e.preventDefault(); const t = document.querySelector(a.getAttribute('href')); if (t) t.scrollIntoView({ behavior:'smooth', block:'start' }); });
     });
+
+    // Beer tabs
+    function switchTab(id) {
+      document.querySelectorAll('.beer-list').forEach(l => l.classList.remove('active'));
+      document.querySelectorAll('.beers__tab').forEach(t => t.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      event.target.classList.add('active');
+      // Re-observe reveals in newly visible tab
+      document.querySelectorAll(`#${id} .reveal:not(.visible)`).forEach(el => observer.observe(el));
+    }
+
+    // Charity progress bar animation
+    const charityObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('animated'); charityObserver.unobserve(e.target); }
+      });
+    }, { threshold: 0.5 });
+    const bar = document.getElementById('charityBar');
+    if (bar) charityObserver.observe(bar);
+
+    // Form handlers (placeholder — wire to backend / email service)
+    function handleBooking(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form__submit');
+      btn.textContent = 'SENT!';
+      btn.style.background = 'var(--amber)';
+      btn.style.color = 'var(--bg-deep)';
+      btn.style.borderColor = 'var(--amber)';
+      setTimeout(() => { btn.textContent = 'SEND INQUIRY'; btn.style = ''; e.target.reset(); }, 3000);
+    }
+    function handleContact(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form__submit');
+      btn.textContent = 'SENT!';
+      btn.style.background = 'var(--amber)';
+      btn.style.color = 'var(--bg-deep)';
+      btn.style.borderColor = 'var(--amber)';
+      setTimeout(() => { btn.textContent = 'SEND MESSAGE'; btn.style = ''; e.target.reset(); }, 3000);
+    }
   </script>
 </body>
 </html>

@@ -105,9 +105,28 @@
 
     /* HERO */
     .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem; overflow: hidden; }
-    .hero__bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 80%, rgba(176,55,55,0.12) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(212,160,36,0.08) 0%, transparent 50%), radial-gradient(ellipse at 50% 50%, rgba(0,136,203,0.04) 0%, transparent 60%), linear-gradient(175deg, #0a0a0a 0%, #0d0807 40%, #100a06 70%, #080808 100%); }
-    .hero__bg::before { content: ''; position: absolute; top: 30%; left: 50%; width: 800px; height: 800px; transform: translate(-50%,-50%); background: radial-gradient(circle, rgba(212,160,36,0.06) 0%, transparent 70%); animation: pulse-glow 8s ease-in-out infinite alternate; }
-    @keyframes pulse-glow { 0% { opacity: 0.4; transform: translate(-50%,-50%) scale(0.9); } 100% { opacity: 1; transform: translate(-50%,-50%) scale(1.15); } }
+    .hero__bg {
+      position: absolute; inset: 0; overflow: hidden;
+    }
+    .hero__bg-img {
+      position: absolute; inset: -10%; width: 120%; height: 120%;
+      background: url('images/hero-pour.png') center center / cover no-repeat;
+      animation: ken-burns 20s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+    .hero__bg-overlay {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(8,8,8,0.3) 0%, rgba(8,8,8,0.7) 70%),
+        linear-gradient(to bottom, rgba(8,8,8,0.5) 0%, rgba(8,8,8,0.1) 40%, rgba(8,8,8,0.6) 80%, rgba(8,8,8,0.95) 100%);
+    }
+    @keyframes ken-burns {
+      0% { transform: scale(1) translate(0, 0); }
+      50% { transform: scale(1.08) translate(-1%, -1.5%); }
+      100% { transform: scale(1.04) translate(1%, 0.5%); }
+    }
+    /* Parallax scroll effect on hero image */
+    .hero__bg-img.scrolling { transition: transform 0.1s linear; }
     .hero__rule { width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(--amber), transparent); margin: 1.5rem auto; opacity: 0.6; }
     .hero__pre { font-family: var(--font-body); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; color: var(--amber); position: relative; z-index: 1; }
     .hero__title { font-family: var(--font-display); font-size: clamp(4.5rem,14vw,12rem); line-height: 0.88; letter-spacing: 0.04em; color: var(--cream); position: relative; z-index: 1; margin-top: 1rem; }
@@ -136,9 +155,8 @@
     .about__text p { font-family: var(--font-serif); font-size: 1.15rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 1.5rem; }
     .about__text p:first-of-type::first-letter { font-family: var(--font-display); font-size: 3.5rem; float: left; line-height: 0.8; margin-right: 0.5rem; margin-top: 0.15rem; color: var(--amber); }
     .about__visual { position: relative; aspect-ratio: 3/4; overflow: hidden; }
-    .about__visual-inner { width: 100%; height: 100%; background: radial-gradient(ellipse at 30% 40%, rgba(212,160,36,0.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 70%, rgba(176,55,55,0.1) 0%, transparent 50%), linear-gradient(160deg, #1a1510, #0d0a07); display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid rgba(212,160,36,0.1); }
-    .about__visual-year { font-family: var(--font-display); font-size: 8rem; color: rgba(212,160,36,0.08); line-height: 1; }
-    .about__visual-text { font-family: var(--font-serif); font-size: 1.2rem; font-style: italic; color: var(--amber-dim); margin-top: 1rem; }
+    .about__visual-inner { width: 100%; height: 100%; background: url('images/founders.png') center center / cover no-repeat; border: 1px solid rgba(212,160,36,0.1); position: relative; }
+    .about__visual-inner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,8,8,0.6) 0%, transparent 40%); }
     .about__stats { display: flex; gap: 3rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(212,160,36,0.1); }
     .about__stat-num { font-family: var(--font-display); font-size: 2.5rem; color: var(--amber); }
     .about__stat-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.25rem; }
@@ -147,6 +165,8 @@
     .beers { background: var(--bg-deep); overflow: hidden; }
     .beers__header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
     .beers__note { font-family: var(--font-serif); font-style: italic; color: var(--text-muted); font-size: 0.95rem; }
+    .beers__banner { width: 100%; aspect-ratio: 21/9; background: url('images/beer-lineup.png') center center / cover no-repeat; margin-bottom: 3rem; border: 1px solid rgba(255,255,255,0.04); position: relative; overflow: hidden; }
+    .beers__banner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(8,8,8,0.4) 0%, transparent 30%, transparent 70%, rgba(8,8,8,0.4) 100%); }
     .beers__tabs { display: flex; gap: 0; margin-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
     .beers__tab { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.15em; padding: 0.8rem 1.8rem; background: none; border: none; color: var(--text-muted); cursor: pointer; position: relative; transition: color 0.3s; }
     .beers__tab::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 2px; background: var(--amber); transform: scaleX(0); transition: transform 0.3s; }
@@ -185,6 +205,8 @@
 
     /* TAPROOM */
     .taproom { background: radial-gradient(ellipse at 80% 40%, rgba(176,55,55,0.06) 0%, transparent 50%), linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 50%, var(--bg-deep) 100%); }
+    .taproom__banner { width: 100%; aspect-ratio: 21/9; background: url('images/taproom-interior.png') center center / cover no-repeat; margin-bottom: 3rem; border: 1px solid rgba(255,255,255,0.04); position: relative; }
+    .taproom__banner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 60%, var(--bg-dark) 100%); }
     .taproom__features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
     .feature-card { padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.04); background: rgba(20,20,20,0.5); transition: all 0.4s; position: relative; overflow: hidden; }
     .feature-card:hover { border-color: rgba(212,160,36,0.12); transform: translateY(-3px); }
@@ -339,7 +361,10 @@
 
   <!-- HERO -->
   <header class="hero">
-    <div class="hero__bg"></div>
+    <div class="hero__bg">
+      <div class="hero__bg-img" id="heroBgImg"></div>
+      <div class="hero__bg-overlay"></div>
+    </div>
     <span class="hero__pre reveal">Bay Shore, New York &mdash; Craft Brewery &amp; Taproom</span>
     <div class="hero__rule reveal"></div>
     <h1 class="hero__title reveal">TAKE <em>TWO</em></h1>
@@ -366,10 +391,7 @@
           </div>
         </div>
         <div class="about__visual reveal">
-          <div class="about__visual-inner">
-            <div class="about__visual-year">2023</div>
-            <div class="about__visual-text">Bay Shore, NY</div>
-          </div>
+          <div class="about__visual-inner"></div>
         </div>
       </div>
     </div>
@@ -386,6 +408,8 @@
         </div>
         <div class="beers__note reveal">Flights $10 &bull; Pints $8 &bull; Crowlers available</div>
       </div>
+
+      <div class="beers__banner reveal"></div>
 
       <div class="beers__tabs reveal">
         <button class="beers__tab active" onclick="switchTab('on-tap')">ON TAP NOW</button>
@@ -565,6 +589,7 @@
         that makes three hours feel like thirty minutes. Plus a 3,000-square-foot outdoor patio for when Long Island
         weather decides to cooperate.
       </p>
+      <div class="taproom__banner reveal"></div>
       <div class="taproom__features">
         <div class="feature-card reveal"><span class="feature-card__icon">&#127866;</span><div class="feature-card__title">14 ROTATING TAPS</div><p class="feature-card__text">Always something new, always dark options. Flights of four for $10 let you explore the range.</p></div>
         <div class="feature-card reveal"><span class="feature-card__icon">&#127829;</span><div class="feature-card__title">FOOD TRUCKS</div><p class="feature-card__text">Rotating local food trucks serving pizza, finger food, and whatever pairs best with a stout on a Friday.</p></div>
@@ -783,9 +808,18 @@
     function enterSite() { document.getElementById('ageGate').classList.add('hidden'); sessionStorage.setItem('ageVerified','1'); }
     if (sessionStorage.getItem('ageVerified')) document.getElementById('ageGate').classList.add('hidden');
 
-    // Nav scroll
+    // Nav scroll + hero parallax
     const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+    const heroBgImg = document.getElementById('heroBgImg');
+    const heroH = window.innerHeight;
+    window.addEventListener('scroll', () => {
+      const sy = window.scrollY;
+      nav.classList.toggle('scrolled', sy > 60);
+      // Parallax: shift hero image down as user scrolls (creates depth)
+      if (sy < heroH * 1.5 && heroBgImg) {
+        heroBgImg.style.transform = `scale(${1 + sy * 0.0002}) translateY(${sy * 0.25}px)`;
+      }
+    }, { passive: true });
 
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
